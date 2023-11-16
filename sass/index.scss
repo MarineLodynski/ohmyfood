@@ -2,6 +2,7 @@ $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 $background-color: #F6F6F6;
+$color-one : white;
 
 $font-family-one: "Shrikhand";
 $font-family-two: "Roboto";
@@ -39,8 +40,9 @@ body{
     margin-top:14px;
     height:63px;
 
-    .logo{
+    .header__logo{
         height:36px;
+        object-fit: cover;
     }
 }
 
@@ -51,6 +53,8 @@ body{
     align-items: center;
     background-color: $background-color;
     font-family: $font-family-two;
+
+    padding:30px;
 }
 
 .reservation-bloc__form-restaurants {
@@ -74,7 +78,7 @@ body{
     border-radius: 30px;
     border: solid;
     background: linear-gradient(#FF79DA,#9356DC );
-    color: white;
+    color: $color-one;
     border-color: $background-color;
     padding: 20px 20px;
     font-size: 16px;
@@ -97,7 +101,7 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap:10px;
+    gap:20px;
 
     background-color: $background-color;
     border-width: 0;
@@ -107,10 +111,18 @@ body{
     padding: 20px 10px 20px 10px;
     width: 90%;
     margin-bottom: 20px;
+    padding-left:30px;
+
+    box-shadow: 0px, 15px,4px,#000000;
 }
 
-.button-functioning fa-solid {
-    background-color:#7E7E7E;
+.button-functioning i {
+    
+    color:#7E7E7E;
+    
+    &:hover{
+        color:$primary-color;
+    }
 }
 
 .button-functioning p {
@@ -123,27 +135,36 @@ body{
 /* Restaurants */
 .restaurants {
     background-color: $background-color;
+
+    .restaurants__title {
+        @include section-title;
+    }
 }
 
 
+
 .restaurants-cards {
+    @include column;
+   justify-content: space-around;
     gap:18px;
+    
 }
 
 .restaurants-cards a {
     text-decoration: none;
-    color:black;
-    
+    color: $color-one;
+    border-width: 1px;
+   
 }
 
-
-
 .card {
-    border:solid;
+    
     border-radius: 15px;
     border-width: 0,5px;
-    
+    background-color: $color-one;
     margin-bottom: 18px;
+
+    width: 80%;
 }
 
 .restaurants .card img {
@@ -151,6 +172,12 @@ body{
     width:100%;
     border-radius: 15px;
     ;
+}
+
+.restaurants-cards .card-content{
+    color:black;
+    line-height: 0;
+    
 }
 
 .restaurants-cards .card-title {
@@ -167,7 +194,7 @@ body{
     @include column;
     
     background-color:#353535;
-    color:white;
+    color:$color-one;
 
     width: 100%;
    
@@ -176,12 +203,14 @@ body{
 .logo-content{
     font-family: $font-family-one;
     margin-left:40px;
+    margin-top:20px;
 }
 
 .footer-inside__list{
     list-style: none;
     display: flex;
     flex-direction: column;
+    margin-top:0;
     
 } 
 
@@ -189,8 +218,11 @@ body{
     display: flex;
     align-items: center;
     gap: 10px;
+    
 }
 
-
+.footer-inside p {
+    line-height: 0;
+}
 
 
