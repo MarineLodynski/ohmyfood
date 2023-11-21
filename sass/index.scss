@@ -22,15 +22,16 @@ $font-family-two: "Roboto";
 
 body{
     font-family: Roboto;
-    margin:0;
+    min-width: 320px;
+    max-width: 767.98px;
+    margin: 0;
 }
 
 .main-container {
-    max-width: 768px;
     width: 100%;
     box-sizing: border-box;
     padding:0;
-
+    margin:0;
 }
 
 /* Header */
@@ -46,22 +47,31 @@ body{
         margin-bottom:14px;
     }
 
-    .header__form{
-        display: flex;
-        justify-content: flex-start;
-        gap:10px;
+    
 
-        background-color: $background-color2;
-        .header__form--maps{
+    .header__image{
+        height: 300px;  
+        width: 100%;
+        object-fit: cover;
+       
+    }
+}
+
+.form{
+        display: flex;
+        justify-content: center;
+        background-color:$background-color2;
+        width: 100%;
+        .form__icon{
             padding:0px 4px;
         }
     }
-}
+
+
 
 ::placeholder{
     color:black;
     opacity: 1;
-    background-color: $background-color2;
 }
 
 input {
@@ -70,9 +80,8 @@ input {
     font-weight: 700;
 
     text-align: center;
-    
     border-style: none;
-
+    background-color: $background-color2;
     
 }
 
@@ -102,6 +111,7 @@ input {
     padding: 20px 20px;
     font-size: 16px;
     font-family: 'Roboto';
+    
 }
 
 
@@ -154,6 +164,7 @@ input {
 /* Restaurants */
 .restaurants {
     background-color: $background-color;
+    width: 100%;
 
     .restaurants__title {
         @include section-title;
@@ -173,6 +184,7 @@ input {
     text-decoration: none;
     color: $color-one;
     border-width: 1px;
+    width: 100%;
    
 }
 
@@ -183,14 +195,16 @@ input {
     background-color: $color-one;
     margin-bottom: 18px;
 
+    height: 251px;
     width: 80%;
 }
 
 .restaurants .card img {
    height:174px;
     width:100%;
-    border-radius: 15px;
-    ;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    object-fit: cover;
 }
 
 .restaurants-cards .card-content{
@@ -207,8 +221,62 @@ input {
     font-size:17px;
 }
 
+/* MENUS */
+.main-menu {
+    
+    background-color: $background-color;
+    width:100%;
+    margin:0;
+    padding-left:17px;
+}
 
-/* Footer */
+
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  
+    .menu__title{
+      font-family: $font-family-one;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 28px;
+      line-height: 40.82px;
+    }
+}
+
+.bloc {
+    font-family: $font-family-two;
+    .bloc__entrees{
+        border-color:#99E2D0;
+        border-bottom: solid 3px;
+       
+    }
+}
+  
+.cards {
+    background-color: $color-one;
+    border: solid;
+    border-color: $color-one;
+    border-radius:15px;
+
+    width:90%;
+    
+    margin-left:17px;
+    margin-bottom:20px;
+
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+
+
+    .cards__content{
+        padding:15px;
+        line-height: 0;
+    }
+}
+
+/* Footer all */
 .footer-inside {
     @include column;
     
