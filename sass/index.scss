@@ -1,8 +1,10 @@
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
+
 $background-color: #F6F6F6;
 $background-color2: #EAEAEA;
+
 $color-one : white;
 
 $font-family-one: "Shrikhand";
@@ -17,7 +19,10 @@ $font-family-two: "Roboto";
 }
 
 @mixin section-title{
-    margin-left:20px;
+    margin-left:30px;
+    font-family: $font-family-two;
+    font-weight: 700;
+    
 }
 
 body{
@@ -58,16 +63,14 @@ body{
 }
 
 .form{
-        display: flex;
-        justify-content: center;
-        background-color:$background-color2;
-        width: 100%;
-        .form__icon{
-            padding:0px 4px;
-        }
-    }
-
-
+    display: flex;
+    justify-content: center;
+    background-color:$background-color2;
+    width: 100%;
+    .form__icon{
+        padding:0px 4px;
+    } 
+}
 
 ::placeholder{
     color:black;
@@ -75,9 +78,9 @@ body{
 }
 
 input {
-    font-family: Raleway;
-    font-size: 18px;
-    font-weight: 700;
+    font-family: $font-family-two;
+    font-size: 16px;
+    font-weight: 500;
 
     text-align: center;
     border-style: none;
@@ -103,14 +106,21 @@ input {
 }
 
 .reservation__button{
-    border-radius: 30px;
+    border-radius: 25px;
     border: solid;
-    background: linear-gradient(#FF79DA,#9356DC );
+    border-width:0;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+
     color: $color-one;
     border-color: $background-color;
-    padding: 20px 20px;
+    padding: 15px 20px;
     font-size: 16px;
     font-family: 'Roboto';
+
+    &:hover{
+        opacity: 0.9;
+    }
     
 }
 
@@ -120,6 +130,7 @@ input {
 .functioning {
     display: flex;
     flex-direction: column;
+    margin-bottom:20px;
 
     .functioning__title{
         @include section-title;
@@ -136,13 +147,14 @@ input {
     border-width: 0;
     margin-left:32px;
 
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 20px 10px 20px 10px;
     width: 90%;
     margin-bottom: 20px;
     padding-left:30px;
 
-    box-shadow: 0px, 15px,4px,#000000;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+
 }
 
 .button-functioning i {
@@ -159,12 +171,23 @@ input {
     font-weight: bold;
 }
 
-
+.number {
+    color:$color-one;
+    border:solid;
+    border-width:1px;
+    background-color: $primary-color;
+    padding:2px 7px;
+    border-radius:20px;
+    
+    position:absolute;
+}
 
 /* Restaurants */
 .restaurants {
     background-color: $background-color;
     width: 100%;
+    padding-top:10px;
+    padding-bottom:30px;
 
     .restaurants__title {
         @include section-title;
@@ -185,6 +208,9 @@ input {
     color: $color-one;
     border-width: 1px;
     width: 100%;
+
+    @include column;
+    align-items: center;
    
 }
 
@@ -196,7 +222,7 @@ input {
     margin-bottom: 18px;
 
     height: 251px;
-    width: 80%;
+    width: 90%;
 }
 
 .restaurants .card img {
@@ -215,17 +241,20 @@ input {
 
 .restaurants-cards .card-title {
     font-size: 18px;
+    font-weight: 700;
 }
 
 .restaurants-cards p {
     font-size:17px;
 }
 
+.full::before{
+    display: none;
+}
+
 /* MENUS */
 .main-menu {
-    
     background-color: $background-color;
-    width:100%;
     margin:0;
     padding-left:17px;
 }
@@ -234,8 +263,10 @@ input {
 
 .menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    
+    
     
   
     .menu__title{
@@ -244,18 +275,30 @@ input {
       font-style: italic;
       font-size: 28px;
       line-height: 40.82px;
+    
     }
+
 }
 
 .bloc {
     font-family: $font-family-two;
     .bloc__entrees{
-        border-color:#99E2D0;
-        border-bottom: solid 3px;
+        font-weight:300;
+        font-size:16px;
        
+        &::after{
+            content:"";
+            position:absolute;
+            color: $tertiary-color;
+            left:10px;
+            bottom: -50px;
+            height: 3px;
+          
+        }
     }
 }
-  
+ 
+
 .cards {
     background-color: $color-one;
     border: solid;
@@ -271,10 +314,44 @@ input {
 
 
     .cards__content{
-        padding:15px;
-        line-height: 0;
+        padding: 0px 20px;
+        line-height: 5px;
     }
 }
+
+.subtitle{
+    display: flex;
+    justify-content: space-between;
+
+    .subtitle__euro {
+    font-family: $font-family-two;
+    font-weight: 700;
+    font-size: 15px;
+    align-self: center;
+}
+}
+
+.command {
+    border-radius: 25px;
+    border: solid;
+    border-width:0;
+    background: linear-gradient(#FF79DA,#9356DC);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+
+    color: $color-one;
+    border-color: $background-color;
+    padding: 5px 20px;
+    font-size: 16px;
+    font-family: 'Roboto';
+
+    margin-bottom:20px;
+
+    &:hover{
+        opacity: 0.9;
+    }
+    
+}
+
 
 /* Footer all */
 .footer-inside {
