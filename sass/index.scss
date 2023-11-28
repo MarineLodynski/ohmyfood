@@ -314,29 +314,56 @@ input {
     z-index:2;
     color:#101010;
     border:1px;
+
 }
+
 
 .full::before{
     display: none;
 }
 
+
+
 /* MENUS */
 
 .main-menu {
-    background-color: $background-color;
+    /*
+    position:relative;
+    */
     margin:0;
     
+    
+    
 }
+
+/*
+.image {
+    position: relative;
+    z-index: 1;
+}
+*/
 
 .image__food{
     height: 300px;  
     width: 100%;
     object-fit: cover;
 
+    /*
     position:relative;
     z-index:1;
+    */
    
 }
+
+.meal {
+    background-color: $background-color;
+    border: solid;
+    border-top-left-radius: 70px;
+    border-top-right-radius: 70px;
+    border-color: $background-color;
+    
+}
+
 
 .menu {
     display: flex;
@@ -442,7 +469,7 @@ input {
     color:$color-one;
 
     width: 100%;
-   
+
 }
 
 .logo-content{

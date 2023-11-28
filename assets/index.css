@@ -264,16 +264,34 @@ input {
 
 /* MENUS */
 .main-menu {
-  background-color: #F6F6F6;
+  /*
+  position:relative;
+  */
   margin: 0;
 }
 
+/*
+.image {
+    position: relative;
+    z-index: 1;
+}
+*/
 .image__food {
   height: 300px;
   width: 100%;
   object-fit: cover;
-  position: relative;
-  z-index: 1;
+  /*
+  position:relative;
+  z-index:1;
+  */
+}
+
+.meal {
+  background-color: #F6F6F6;
+  border: solid;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+  border-color: #F6F6F6;
 }
 
 .menu {
