@@ -1,6 +1,7 @@
 /************************************/
 body {
   font-family: "Roboto";
+  margin: 0;
 }
 
 /****/
@@ -177,6 +178,7 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   gap: 18px;
 }
 
@@ -187,11 +189,11 @@ input {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   object-fit: cover;
 }
 
 .card {
+  position: relative;
   border-radius: 15px;
   border-width: 0px;
   background-color: white;
@@ -233,7 +235,7 @@ input {
 
 .label {
   position: absolute;
-  right: 10%;
+  right: 4%;
   z-index: 2;
   color: #008766;
   font-family: "Roboto";
@@ -255,34 +257,29 @@ input {
 .hearts:hover .full {
   opacity: 0;
   transition: 0.3s ease-in-out;
-}
-
-.empty {
-  position: absolute;
-  right: 35px;
-  bottom: 2px;
-}
-
-.full {
-  position: absolute;
-  right: 30px;
-  bottom: 2px;
-  opacity: 0;
-  /*
-  transition:all 200ms;*/
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
 
-/*
-.full:hover{
-    opacity:1;
-    color:$primary-color;
-    /*
-    background: linear-gradient(193.33deg,  -11.44%, #FF79DA 123.93%);
-    */
+.empty {
+  position: absolute;
+  right: 30px;
+  bottom: 25px;
+}
+
+.full {
+  position: absolute;
+  right: 30px;
+  bottom: 25px;
+  opacity: 0;
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
 /* MENUS */
 .main-menu {
   /*
@@ -291,12 +288,6 @@ input {
   margin: 0;
 }
 
-/*
-.image {
-position: relative;
-z-index: 1;
-}
-*/
 .image__food {
   height: 300px;
   width: 100%;
@@ -398,8 +389,6 @@ z-index: 1;
 
 /* Footer all */
 .footer-inside {
-  display: flex;
-  flex-direction: column;
   background-color: #353535;
   color: white;
   width: 100%;
@@ -407,25 +396,17 @@ z-index: 1;
 
 .logo-content {
   font-family: "Shrikhand";
-  margin-left: 40px;
-  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .footer-inside__list {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  margin-top: 0;
 }
 
 .footer-inside li {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.footer-inside p {
-  line-height: 0;
 }
 
 /******** Mobile ******/
@@ -506,102 +487,6 @@ z-index: 1;
     z-index: 1;
   }
   /* Restaurants */
-  .restaurants {
-    background-color: #F6F6F6;
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 30px;
-  }
-  .restaurants .restaurants__title {
-    margin-left: 30px;
-    font-family: "Roboto";
-    font-weight: 700;
-  }
-  .restaurants-cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 18px;
-  }
-  .restaurants-cards a {
-    text-decoration: none;
-    color: white;
-    border-width: 1px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    object-fit: cover;
-  }
-  .card {
-    border-radius: 15px;
-    border-width: 0px;
-    background-color: white;
-    margin-bottom: 18px;
-    height: 251px;
-    width: 90%;
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-  }
-  .restaurants .card img {
-    height: 174px;
-    width: 100%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    object-fit: cover;
-  }
-  .restaurants-cards .card-content {
-    color: black;
-    line-height: 0;
-    position: relative;
-    z-index: 1;
-  }
-  .restaurants-cards .card-txt {
-    padding-left: 20px;
-    font-family: "Roboto";
-  }
-  .restaurants-cards .card-title {
-    font-size: 18px;
-    font-weight: 700;
-  }
-  .restaurants-cards p {
-    font-size: 17px;
-    font-weight: 300;
-  }
-  .label {
-    position: absolute;
-    right: 10%;
-    z-index: 2;
-    color: #008766;
-    font-family: "Roboto";
-    font-size: 14px;
-    line-height: 16px;
-    padding: 7px 9px;
-    background-color: #99E2D0;
-    border: solid;
-    border-width: 1px;
-    border-radius: 2px;
-    border-color: #99E2D0;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-  }
-  .empty {
-    position: absolute;
-    right: 35px;
-    bottom: 2px;
-  }
-  .full {
-    position: absolute;
-    right: 35px;
-    bottom: 2px;
-    opacity: 0;
-    transition: all 200ms;
-  }
-  .full:hover {
-    opacity: 1;
-    color: #9356DC;
-    /*
-    background: linear-gradient(193.33deg,  -11.44%, #FF79DA 123.93%);
-    */
-  }
   /* MENUS */
   .main-menu {
     /*
@@ -711,25 +596,15 @@ z-index: 1;
   .footer-inside {
     display: flex;
     flex-direction: column;
-    background-color: #353535;
-    color: white;
-    width: 100%;
   }
   .logo-content {
-    font-family: "Shrikhand";
     margin-left: 40px;
     margin-top: 20px;
   }
   .footer-inside__list {
-    list-style: none;
     display: flex;
     flex-direction: column;
     margin-top: 0;
-  }
-  .footer-inside li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
   }
   .footer-inside p {
     line-height: 0;
@@ -737,37 +612,6 @@ z-index: 1;
 }
 /************************************/
 /****** Media queries T & D ***********/
-/* Medium devices (tablets, less/equal than 1024px) */
-/*
-@media screen and (min-width:768px) and (max-width: 1024px) {
-
-
-
-    body {
-        min-width: 768px;
-        max-width: 1024px;
-        padding:0;
-        margin:0;
-    }
-
-
-    .header__logo {
-        height:40px;
-    }
-
-    .button {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        flex-wrap: wrap;
-
-        width: 30%;
-
-
-    }
-
-}
-*/
 /* Large devices (desktop, less/equal than 1440px) */
 @media screen and (min-width: 1024px) {
   /*
@@ -778,6 +622,9 @@ z-index: 1;
   }
 
   */
+  .header__logo {
+    height: 44px;
+  }
   .reservation__title {
     font-size: 40px;
   }
@@ -786,6 +633,20 @@ z-index: 1;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
+  }
+  .footer-inside {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .logo-content {
+    margin-left: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 40px;
+  }
+  .footer-inside__list {
+    display: flex;
+    flex-direction: row;
   }
 }
 
