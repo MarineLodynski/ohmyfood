@@ -21,7 +21,7 @@ body {
 .header i {
   position: absolute;
   left: 30px;
-  bottom: 20px;
+  bottom: 30px;
   text-decoration: none;
 }
 
@@ -59,18 +59,14 @@ input {
   align-items: center;
   background-color: #F6F6F6;
   font-family: "Roboto";
+  font-weight: 700;
   padding: 30px;
 }
 
-/*
 .reservation__title {
-    font-family: $font-family-two;
-    font-weight: 700;
-    margin:0;
-
-
+  margin: 0;
 }
-*/
+
 .reservation__bloc p {
   font-family: "Roboto";
   font-weight: 300;
@@ -123,7 +119,6 @@ input {
   margin-left: 40px;
   border-radius: 20px;
   padding: 10px;
-  width: 80%;
   margin-bottom: 30px;
   padding-left: 30px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
@@ -197,7 +192,6 @@ input {
   border-radius: 15px;
   border-width: 0px;
   background-color: white;
-  margin-bottom: 18px;
   height: 251px;
   width: 90%;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
@@ -412,18 +406,6 @@ input {
 /******** Mobile ******/
 /* Small devices (mobile, less/equal than 320px) */
 @media screen and (max-width: 1024px) {
-  /*
-  body{
-      min-width: 320px;
-      max-width: 767.98px;
-      margin: 0;
-  }
-
-  .main-container {
-   min-width: 320px;
-   max-width: 767.98px;
-  }
-  */
   body {
     margin: 0;
   }
@@ -487,6 +469,9 @@ input {
     z-index: 1;
   }
   /* Restaurants */
+  .card {
+    margin-bottom: 18px;
+  }
   /* MENUS */
   .main-menu {
     /*
@@ -614,26 +599,59 @@ input {
 /****** Media queries T & D ***********/
 /* Large devices (desktop, less/equal than 1440px) */
 @media screen and (min-width: 1024px) {
-  /*
-
-  body {
-      min-width: 1024px;
-      max-width: 1440px;;
+  .header {
+    box-shadow: none;
   }
-
-  */
-  .header__logo {
-    height: 44px;
+  .header .header__logo {
+    height: 34px;
   }
   .reservation__title {
     font-size: 40px;
   }
+  /* FONCTIONNEMENT T-D */
+  .functioning {
+    margin-top: 50px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .functioning .functioning__buttons {
+    display: flex;
+    justify-content: center;
+  }
+  /*
+  .list {
+      padding-left:10px;
+  }
+  */
   .button {
+    width: 15%;
+  }
+  /* RESTAURANTS T-D */
+  .restaurants {
+    padding: 28px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .restaurants-cards {
     display: flex;
     flex-direction: row;
-    align-items: center;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+    width: 70%;
   }
+  .card {
+    position: relative;
+    border-radius: 15px;
+    border-width: 0px;
+    background-color: white;
+    height: 251px;
+    width: 45%;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  }
+  /* FOOTER T-D */
   .footer-inside {
     display: flex;
     flex-direction: row-reverse;
@@ -647,6 +665,7 @@ input {
   .footer-inside__list {
     display: flex;
     flex-direction: row;
+    gap: 10px;
   }
 }
 

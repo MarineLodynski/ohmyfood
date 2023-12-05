@@ -54,7 +54,7 @@ body {
 .header i {
     position:absolute;
     left:30px;
-    bottom:20px;
+    bottom:30px;
     text-decoration: none;
 }
 
@@ -95,19 +95,13 @@ input {
     align-items: center;
     background-color: $background-color;
     font-family: $font-family-two;
+    font-weight: 700;
     padding:30px;
 }
 
-/*
 .reservation__title {
-    font-family: $font-family-two;
-    font-weight: 700;
     margin:0;
-
-    
 }
-*/
-
 
 .reservation__bloc p {
     font-family: $font-family-two;
@@ -169,7 +163,6 @@ input {
 
     border-radius: 20px;
     padding: 10px;
-    width: 80%;
     margin-bottom: 30px;
     padding-left:30px;
 
@@ -251,7 +244,6 @@ input {
     border-radius: 15px;
     border-width: 0px;
     background-color: $color-one;
-    margin-bottom: 18px;
 
     height: 251px;
     width: 90%;
@@ -510,18 +502,6 @@ input {
 /* Small devices (mobile, less/equal than 320px) */
 @media screen and (max-width: 1024px) {
 
-    /*
-    body{
-        min-width: 320px;
-        max-width: 767.98px;
-        margin: 0;
-    }
-
-    .main-container {
-     min-width: 320px;
-     max-width: 767.98px;
-    }
-    */
 
     body {
         margin:0;
@@ -548,15 +528,12 @@ input {
 
     /* Navigation */
 
-
-
     .reservation__title {
         font-family: $font-family-two;
         font-weight: 700;
         margin:0;
         font-size:24px;
         
-
     }
 
 
@@ -614,6 +591,9 @@ input {
 
     /* Restaurants */
     
+    .card {
+        margin-bottom: 18px;
+    }
 
 
     /* MENUS */
@@ -767,6 +747,7 @@ input {
     .footer-inside__list{
         @include column; 
         margin-top:0;
+        
     } 
 
 
@@ -783,31 +764,75 @@ input {
 /* Large devices (desktop, less/equal than 1440px) */
 @media screen and (min-width: 1024px) {
 
-    /*
-
-    body {
-        min-width: 1024px;
-        max-width: 1440px;;
+    .header {
+        box-shadow: none;
+        .header__logo {
+            height:34px;
+        }
     }
 
-    */
-
-    .header__logo {
-        height:44px;
-    }
-
+    
     .reservation__title {
         font-size: 40px;
     }
 
+
+    /* FONCTIONNEMENT T-D */
+
+    .functioning {
+       margin-top: 50px;
+       margin-left: 0px;
+       margin-right: 0px;
+
+        .functioning__buttons {
+            display:flex;
+            justify-content: center;
+        }
+    }
+    
+    /*
+    .list {
+        padding-left:10px;
+    }
+    */
+
     .button {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        flex-wrap: wrap;
+        width:15%;
     }
 
+
+    /* RESTAURANTS T-D */
+    .restaurants {
+        padding: 28px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     
+    }
+
+    .restaurants-cards {
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 50px;
+       
+        width:70%;
+    }
+
+    .card {
+        position: relative;
+        border-radius: 15px;
+        border-width: 0px;
+        background-color: white;
+
+        height: 251px;
+        width: 45%;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    /* FOOTER T-D */
     .footer-inside {
         display: flex;
         flex-direction: row-reverse;
@@ -823,6 +848,7 @@ input {
     .footer-inside__list {
         display: flex;
         flex-direction: row;
+        gap:10px;
     }
 
 
