@@ -6,6 +6,56 @@ body {
 
 /****/
 /* Animation loader */
+.loader-container {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 700px;
+  background: white;
+  transition: opacity 1s ease-in-out;
+  animation: loader 3s alternate;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+}
+
+.loader-container p {
+  font-family: "Shrikhand";
+}
+
+.dot {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0px 15px;
+}
+
+.d1 {
+  background-color: #9356DC;
+}
+
+.d2 {
+  background-color: #FF79DA;
+  animation-delay: 0.05s;
+}
+
+.d3 {
+  background-color: #99E2D0;
+  animation-delay: 0.1s;
+}
+
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+}
 /****/
 .header {
   display: flex;
@@ -78,7 +128,7 @@ input {
   border-radius: 25px;
   border: solid;
   border-width: 0;
-  background: linear-gradient(200deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(358deg, #9356DC -11.44%, #FF79DA 123.93%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   color: white;
   border-color: #F6F6F6;
@@ -88,10 +138,8 @@ input {
 }
 .reservation__button:hover {
   opacity: 0.8;
-  /*
   transform: scale(1.02);
   transition: ease-out 300ms;
-     */
   box-shadow: 3px 6px 12px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -178,6 +226,7 @@ input {
 }
 
 .restaurants-cards a {
+  pointer-events: auto;
   text-decoration: none;
   color: white;
   border-width: 1px;
@@ -189,6 +238,7 @@ input {
 
 .card {
   position: relative;
+  pointer-events: none;
   border-radius: 15px;
   border-width: 0px;
   background-color: white;
@@ -244,27 +294,31 @@ input {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
-.hearts:hover .empty {
+/**** COEURS ****/
+.hearts {
+  pointer-events: none;
+  cursor: none;
+}
+
+.hearts:hover .hearts__empty {
   opacity: 1;
   transition: 0.3s ease-in-out;
 }
-.hearts:hover .full {
+.hearts:hover .hearts__full {
   opacity: 0;
   transition: 0.3s ease-in-out;
-  background: linear-gradient(#9356DC, #FF79DA);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
 }
 
-.empty {
+.hearts__empty {
   position: absolute;
+  pointer-events: none;
   right: 30px;
   bottom: 25px;
 }
 
-.full {
+.hearts__full {
   position: absolute;
+  pointer-events: none;
   right: 30px;
   bottom: 25px;
   opacity: 0;
@@ -366,7 +420,7 @@ input {
   border-radius: 25px;
   border: solid;
   border-width: 0;
-  background: linear-gradient(#FF79DA, #9356DC);
+  background: linear-gradient(358deg, #9356DC -11.44%, #FF79DA 123.93%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   color: white;
   border-color: #F6F6F6;
@@ -378,6 +432,8 @@ input {
 }
 .command:hover {
   opacity: 0.8;
+  transform: scale(1.02);
+  transition: ease-out 300ms;
   box-shadow: 3px 6px 12px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -520,7 +576,7 @@ input {
   .bloc .bloc__entrees {
     font-weight: 300;
     font-size: 16px;
-    padding-left: 10px;
+    padding-left: 13px;
     margin-top: 40px;
   }
   .bloc .bloc__entrees .bloc__entrees--title::before {
@@ -538,7 +594,7 @@ input {
     border-color: white;
     border-radius: 15px;
     width: 90%;
-    margin-left: 17px;
+    margin-left: 23px;
     margin-bottom: 20px;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   }
@@ -614,9 +670,12 @@ input {
     margin-left: 0px;
     margin-right: 0px;
   }
+  .functioning .functioning__title {
+    margin-left: 200px;
+  }
   .functioning .functioning__buttons {
     display: flex;
-    justify-content: center;
+    margin-left: 180px;
   }
   /*
   .list {
@@ -624,23 +683,34 @@ input {
   }
   */
   .button {
-    width: 15%;
+    width: 21%;
   }
   /* RESTAURANTS T-D */
   .restaurants {
     padding: 28px 0px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+  }
+  .restaurants .restaurants__title {
+    margin-left: 200px;
   }
   .restaurants-cards {
+    /*
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     gap: 50px;
-    width: 70%;
+
+    width:70%;
+    */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 50px;
+    margin-left: 180px;
+    margin-right: 180px;
   }
   .card {
     position: relative;
@@ -650,6 +720,11 @@ input {
     height: 251px;
     width: 45%;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  }
+  /* MENUS T-D */
+  .bloc {
+    margin-left: 180px;
+    margin-right: 180px;
   }
   /* FOOTER T-D */
   .footer-inside {
