@@ -306,6 +306,7 @@ input {
 /**** COEURS ****/
 .hearts:hover .hearts__empty {
   opacity: 0;
+  color: white;
   transition: 0.3s ease-in-out;
 }
 .hearts:hover .hearts__full {
@@ -314,18 +315,11 @@ input {
 }
 
 .hearts__empty {
-  position: absolute;
-  cursor: pointer;
-  right: 30px;
-  bottom: 25px;
   opacity: 1;
+  color: black;
 }
 
 .hearts__full {
-  position: absolute;
-  cursor: pointer;
-  right: 30px;
-  bottom: 25px;
   opacity: 0;
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
@@ -357,6 +351,8 @@ input {
   border-top-left-radius: 70px;
   border-top-right-radius: 70px;
   border-color: #F6F6F6;
+  margin-top: -50px;
+  position: relative;
 }
 
 .menu {
@@ -498,7 +494,7 @@ input {
 /************************************/
 /******** Mobile ******/
 /* Small devices (mobile, less/equal than 320px) */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 767.98px) {
   body {
     margin: 0;
   }
@@ -570,6 +566,35 @@ input {
   .label {
     right: 40px;
   }
+  /* ANIMATION COEUR */
+  .description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hearts {
+    position: relative;
+    /* right: 35px; */
+    /* bottom: 20px; */
+    /*
+    padding-right: 50px;*/
+  }
+  .hearts:hover .hearts__empty {
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+  }
+  .hearts:hover .hearts__full {
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+  }
+  .hearts__empty {
+    position: absolute;
+    cursor: pointer;
+  }
+  .hearts__full {
+    position: absolute;
+    cursor: pointer;
+  }
   /* MENUS */
   .main-menu {
     /*
@@ -595,7 +620,7 @@ input {
   }
   .menu {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
   }
   .menu .menu__title {
@@ -605,7 +630,35 @@ input {
     font-size: 28px;
     line-height: 40.82px;
     margin-bottom: 0;
+    margin-right: 40px;
   }
+  /* ANIMATION COEUR */
+  .hm {
+    margin-bottom: 20px;
+  }
+  .hm:hover .hm__empty {
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+  }
+  .hm:hover .hm__full {
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+  }
+  .hm__empty {
+    position: absolute;
+    cursor: pointer;
+    opacity: 1;
+  }
+  .hm__full {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    background: linear-gradient(#9356DC, #FF79DA);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  /* BLOC MENU */
   .bloc {
     font-family: "Roboto";
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -650,44 +703,6 @@ input {
     display: flex;
     justify-content: space-between;
   }
-  /*
-  .subtitle__euro {
-      font-family: $font-family-two;
-      font-weight: 700;
-      font-size: 15px;
-
-  }
-  .check {
-
-      position: absolute;
-      right: -3px;
-      z-index: 3;
-      top: -3px;
-
-
-      border: solid;
-
-      border-width: 0px;
-      border-top-right-radius: 15px;
-      border-bottom-right-radius:15px;
-      padding: 19px 18px;
-
-      color: white;
-      background-color: $tertiary-color;
-
-      opacity:0;
-
-
-  }
-
-  .check:hover {
-      opacity:1;
-  }
-
-  .subtitle__euro:hover{
-      opacity:0;
-  }
-  */
   .subtitle__euro {
     font-family: "Roboto";
     font-weight: 700;
@@ -696,7 +711,7 @@ input {
   }
   .check {
     position: absolute;
-    right: -3px;
+    right: -25px;
     z-index: 3;
     top: -3px;
     border: solid;
@@ -711,10 +726,17 @@ input {
   }
   .check:hover {
     opacity: 1;
-    transform: translateX(-10px);
+    right: 0;
+    transform: 250ms ease-out;
+    transform: translateX(-5px);
   }
   .subtitle__euro:hover {
+    color: green;
+    margin-right: 50px;
     transform: translateX(10px);
+  }
+  .subtitle p:hover {
+    text-overflow: ellipsis;
   }
   /*** BOUTON COMMANDES ***/
   .command {
@@ -755,8 +777,73 @@ input {
 }
 /************************************/
 /****** Media queries T & D ***********/
-/* Large devices (desktop, less/equal than 1440px) */
-@media screen and (min-width: 1024px) {
+/* Medium devices (tablets, less/equal than 768px) */
+@media screen and (min-width: 768px) {
+  .header {
+    box-shadow: none;
+  }
+  .header .header__logo {
+    height: 34px;
+  }
+  .reservation__title {
+    font-size: 40px;
+  }
+  .check {
+    position: absolute;
+    right: -25px;
+    z-index: 3;
+    top: -3px;
+    border: solid;
+    border-width: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 19px 18px;
+    color: white;
+    background-color: #99E2D0;
+    opacity: 0;
+    transition: transform 250ms ease-out;
+    animation: check;
+  }
+  .check:hover {
+    opacity: 1;
+    right: 0;
+    transform: 250ms ease-out;
+    transform: translateX(-5px);
+  }
+  .subtitle__euro:hover {
+    color: green;
+    margin-right: 50px;
+    transform: translateX(10px);
+  }
+  .subtitle p:hover {
+    text-overflow: ellipsis;
+  }
+  /* FOOTER T-D */
+  .footer-inside {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .logo-content {
+    margin-left: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 40px;
+  }
+  .footer-inside__list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-right: 10px;
+  }
+  .list-with {
+    gap: 18px;
+  }
+  .space {
+    margin-right: 35px;
+  }
+}
+/* Large devices (desktop, less/equal than 1024px) */
+@media screen and (min-width: 1025px) {
   .header {
     box-shadow: none;
   }
@@ -824,6 +911,24 @@ input {
   .label {
     right: 55px;
   }
+  /* ANIMATION COEUR */
+  .hearts {
+    position: absolute;
+    right: 45px;
+    bottom: 20px;
+  }
+  .hearts__empty {
+    position: absolute;
+    cursor: pointer;
+    right: 45px;
+    bottom: 20px;
+  }
+  .hearts__full {
+    position: absolute;
+    cursor: pointer;
+    right: 45px;
+    bottom: 20px;
+  }
   /* MENUS T-D */
   .image img {
     height: 383px;
@@ -841,6 +946,36 @@ input {
     align-self: center;
     margin-left: 0px;
     margin-right: 20px;
+  }
+  .check {
+    position: absolute;
+    right: -25px;
+    z-index: 3;
+    top: -3px;
+    border: solid;
+    border-width: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 19px 18px;
+    color: white;
+    background-color: #99E2D0;
+    opacity: 0;
+    transition: transform 250ms ease-out;
+    animation: check;
+  }
+  .check:hover {
+    opacity: 1;
+    right: 0;
+    transform: 250ms ease-out;
+    transform: translateX(-5px);
+  }
+  .subtitle__euro:hover {
+    color: green;
+    margin-right: 50px;
+    transform: translateX(10px);
+  }
+  .subtitle p:hover {
+    text-overflow: ellipsis;
   }
   /* FOOTER T-D */
   .footer-inside {
