@@ -31,6 +31,10 @@ body {
     margin:0;
 }
 
+img {
+    object-fit: cover;
+}
+
 /****/
 /* Animation loader */
 .loader-container {
@@ -195,6 +199,9 @@ input {
     padding: 15px 20px;
     font-size: 16px;
     font-family: $font-family-two;
+    font-weight: initial;
+    text-decoration:none;
+    
 
     &:hover{
         opacity: 0.8;
@@ -209,8 +216,7 @@ input {
 /* BLOC FONCTIONNEMENT */
 
 .functioning {
-    display: flex;
-    flex-direction: column;
+    @include column;
     margin-bottom:20px;
     position: relative;
 
@@ -262,9 +268,7 @@ input {
     padding:2px 7px;
     border-radius:20px;
 
-    position:absolute;
-    z-index: 2;
-    left:30px;
+
 }
 
 .list {
@@ -291,15 +295,12 @@ input {
 
 .restaurants-cards {
     @include column;
-    justify-content: space-around;
-    align-items: center;
-    gap:18px;
 
 }
 
 .restaurants-cards a {
     pointer-events: auto;
-    
+    position:relative;
     text-decoration: none; 
     color: $color-one;
     border-width: 1px;
@@ -311,14 +312,10 @@ input {
 }
 
 .card {
-   position:relative;
-   pointer-events: none;
-
     border-radius: 15px;
     border-width: 0px;
     background-color: $color-one;
 
-    height: 251px;
     width: 90%;
 
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
@@ -357,7 +354,7 @@ input {
 
 .label {
     position:absolute;
-    right:4%;
+    
     z-index:2;
 
     color: #008766;
@@ -379,12 +376,6 @@ input {
 
 /**** COEURS ****/
 
-/*
-.hearts {
-    pointer-events: none;
-    cursor: none;
-}
-*/
 
 
 .hearts:hover{
@@ -399,11 +390,9 @@ input {
     }
 }
 
+
 .hearts__empty {
     position:absolute;
-    /*
-    pointer-events: none;
-    */
     cursor: pointer;
     right:30px;
     bottom:25px;
@@ -413,9 +402,6 @@ input {
 
 .hearts__full {
     position:absolute;
-    /*
-    pointer-events: none;
-    */
     cursor: pointer;
     right:30px;
     bottom:25px;
@@ -429,7 +415,13 @@ input {
 
 
 
+/***************/
 /* MENUS */
+
+.container {
+    position: relative;
+}
+
 
 .main-menu {
     /*
@@ -443,12 +435,7 @@ input {
 .image__food{
     height: 300px;  
     width: 100%;
-    object-fit: cover;
 
-    /*
-    position:relative;
-    z-index:1;
-    */
 
 }
 
@@ -478,6 +465,7 @@ input {
 
 }
 
+/*** SECTION ENTREES PLATS DESSERTS + ANIMATION ***/
 .bloc {
     font-family: $font-family-two;
     transition: opacity 1s ease-in-out;
@@ -517,7 +505,6 @@ input {
     
     animation-delay: 3s;
 }
-
 
 
 @keyframes bloc {
@@ -569,6 +556,10 @@ input {
     }
 }
 
+
+
+
+/** BOUTON COMMANDES **/
 .command {
 
     border-radius: 25px;
@@ -612,12 +603,22 @@ input {
     list-style: none;
 } 
 
+.list-with {
+    font-weight:500;
+}
+
+.list-without {
+    font-weight:400;
+}
+
 .footer-inside li {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
+
+/************************************/
 
 /******** Mobile ******/
 /* Small devices (mobile, less/equal than 320px) */
@@ -690,16 +691,12 @@ input {
     }
 
     .number {
-        color:$color-one;
-        border:solid;
-        border-width:1px;
-        background-color: $primary-color;
-        padding:2px 7px;
-        border-radius:20px;
     
         position:absolute;
         z-index: 2;
         left:30px;
+
+        
     }
 
     .list {
@@ -712,10 +709,23 @@ input {
 
     /* Restaurants */
     
+    .restaurants-cards {
+        @include column;
+        justify-content: space-around;
+        align-items: center;
+        gap:18px;
+    
+    }
+
     .card {
+        height:251px;
         margin-bottom: 18px;
     }
 
+
+    .label {
+        right:40px;
+    }
 
     /* MENUS */
 
@@ -726,12 +736,6 @@ input {
         margin:0;
     }
 
-    /*
-   .image {
-    position: relative;
-    z-index: 1;
-    }
-    */
 
     .image__food{
         height: 300px;  
@@ -795,7 +799,11 @@ input {
         }
     }
     
-
+    .restaurants-cards a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     .cards {
         position: relative;
@@ -823,20 +831,23 @@ input {
     .subtitle{
         display: flex;
         justify-content: space-between;
-
-        .subtitle__euro {
-            font-family: $font-family-two;
-            font-weight: 700;
-            font-size: 15px;
-            align-self: center;
-        }
+        
+        
     }
-
+    /*
+    .subtitle__euro {
+        font-family: $font-family-two;
+        font-weight: 700;
+        font-size: 15px;
+            
+    }
     .check {
+        
         position: absolute;
         right: -3px;
         z-index: 3;
         top: -3px;
+        
 
         border: solid;
        
@@ -848,17 +859,55 @@ input {
         color: white;
         background-color: $tertiary-color;
 
+        opacity:0;
+
        
     }
 
-    .check :hover {
-        visibility: visible;
+    .check:hover {
+        opacity:1;
     }
 
-    .subtitle__euro :hover{
-        display: none;
+    .subtitle__euro:hover{
+        opacity:0;
+    }
+    */
+    .subtitle__euro {
+        font-family: $font-family-two;
+        font-weight: 700;
+        font-size: 15px;
+        transition: transform 250ms ease-out;
     }
 
+    .check {
+        position: absolute;
+        right: -3px;
+        z-index: 3;
+        top: -3px;
+        border: solid;
+        border-width: 0px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        padding: 19px 18px;
+        color: white;
+        background-color: $tertiary-color;
+        opacity: 0;
+        transition: transform 250ms ease-out;
+    }
+    
+    .check:hover {
+        opacity: 1;
+        transform: translateX(-10px);
+    }
+    
+    .subtitle__euro:hover {
+        
+        transform: translateX(10px);
+    }
+
+
+
+    /*** BOUTON COMMANDES ***/
     .command {
     
         border-radius: 25px;
@@ -930,85 +979,91 @@ input {
     /* FONCTIONNEMENT T-D */
 
     .functioning {
-       margin-top: 50px;
-       margin-left: 0px;
-       margin-right: 0px;
+       padding: 50px 180px 0px 0px;
 
 
         .functioning__title {
-            margin-left: 200px;
+            margin-left:180px;
         }
 
 
         .functioning__buttons {
             display: flex;
-          margin-left:180px;
+            flex-direction: row;
+            width: 100%; 
+            /* justify-content: center; */
+            margin-left: 180px;
+            gap: 50px;
             
         }
     }
     
-    
-    /*
-    .list {
-        padding-left:10px;
-    }
-    */
-
     .button {
-        width:21%;
-       
+        width:19%;
+        padding: 10px 20px 10px 0px;
+        margin-left: 20px;
     }
+
+    .number {
+        position: relative;
+        /* z-index: 3; */
+        left: px;
+        right: 20px;
+
+    }
+
 
 
     /* RESTAURANTS T-D */
     .restaurants {
-        padding: 28px 0px;
         display: flex;
         flex-direction: column;
+        padding-top:10px;
+        padding-bottom:30px;
         
         .restaurants__title {
-            margin-left:200px;
+            margin-left:180px;
         }
-
     }
 
-   
-
-
     .restaurants-cards {
-        /*
         display: flex;
-        flex-direction: row; 
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
-        gap: 50px;
-       
-        width:70%;
-        */
-
-        display: flex;
-        flex-wrap: wrap;
         flex-direction: row;
+        flex-wrap: wrap;
+        align-items: unset;
         gap: 50px;
     
         margin-left: 180px;
-        margin-right: 180px;
     
     }
 
-    .card {
-        position: relative;
-        border-radius: 15px;
-        border-width: 0px;
-        background-color: white;
-
-        height: 251px;
-        width: 45%;
-        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+    .restaurants-cards a {
+        width:45%;
     }
 
+
+    .card {
+        position: relative;
+        height:310px;
+    }
+
+    
+    .restaurants .card img {
+        height: 231px;
+        width: 100%;
+
+    }
+
+    .label {
+        right:55px;
+    }
+
+
     /* MENUS T-D */
+
+    .image img {
+        height:383px;
+    }
 
     .meal {
         margin-left:180px;
@@ -1047,9 +1102,18 @@ input {
         display: flex;
         flex-direction: row;
         gap:10px;
+        margin-right: 10px;
     }
 
+    .list-with {
+        gap: 18px;
+    }
 
+    .space {
+        margin-right:35px;
+    }
+
+    
 }
  
 

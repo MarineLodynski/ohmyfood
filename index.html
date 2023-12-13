@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/75f85baf1b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./assets/index.css" />
+    <link rel="stylesheet" href="./assets/index.css" >
     <title>Page d'accueil</title>
   </head>
 
@@ -53,9 +53,9 @@
               Découvrez des restaurants d'exception, sélectionnés par nos soins.
             </p>
           </div>
-          <button class="reservation__button">
+          <a href="#restaurant-bloc" class="reservation__button" >
             Explorer nos restaurants
-          </button>
+          </a>
         </section>
       </nav>
 
@@ -99,14 +99,15 @@
           </section>
 
           <!-- Bloc Restaurant -->
-          <section class="restaurants">
+          <section id="restaurant-bloc" class="restaurants">
             <div class="restaurants__title">
               <h2>Restaurants</h2>
             </div>
             <div class="restaurants-cards">
+
               <!-- La palette du goût -->
-              <article class="card"> 
-                <a href="./restaurants/menu1.html">
+              <a href="./restaurants/menu1.html">
+                <article class="card"> 
                   <p class="label">Nouveau</p>
                   <img
                     src="./assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
@@ -119,18 +120,15 @@
                     </div>
                   </div>
                   <div class="hearts">
-                    <i class="fa-regular fa-heart hearts__empty"></i>
-                    <i class="fa-solid fa-heart  hearts__full"></i>
-                  </div> 
-                </a>
-                
-              </article>
+                    <i class="fa-regular fa-heart fa-2x hearts__empty"></i>
+                    <i class="fa-solid fa-heart fa-2x hearts__full"></i>
+                  </div>
+                </article>
+              </a>
               
-              
-          
               <!-- La note enchantée -->
-              <article class="card">
-                <a href="./restaurants/menu2.html">
+              <a href="./restaurants/menu2.html">
+                <article class="card">
                   <p class="label">Nouveau</p>
                   <img
                     src="./assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
@@ -140,20 +138,18 @@
                     <div class="card-txt">
                       <h4 class="card-title">La note enchantée</h4>
                       <p>Charonne</p>
-                      
                     </div>
                   </div>
-                </a>
-                <div class="hearts">
-                  <i class="fa-regular fa-heart fa-2x hearts__empty"></i>
-                  <i class="fa-solid fa-heart fa-2x hearts__full"></i>
-                </div>
-              </article>
-              
+                  <div class="hearts">
+                    <i class="fa-regular fa-heart fa-2x hearts__empty"></i>
+                    <i class="fa-solid fa-heart fa-2x hearts__full"></i>
+                  </div>
+                </article>
+              </a>
 
               <!-- À la française -->
-              <article class="card">
-                <a href="./restaurants/menu3.html">
+              <a href="./restaurants/menu3.html">
+                <article class="card">
                   <img
                     src="./assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
                     alt="plusieurs assiettes dont une avec un toast avec vue de face"
@@ -162,19 +158,18 @@
                     <div class="card-txt">
                       <h4 class="card-title">À la française</h4>
                       <p>Cité Rouge</p>
-                     
                     </div>
                   </div> 
-                </a>
-                <div class="hearts">
-                  <i class="fa-regular fa-heart fa-2x hearts__empty"></i>
-                  <i class="fa-solid fa-heart fa-2x hearts__full"></i>
-                </div>
-              </article>
+                  <div class="hearts">
+                    <i class="fa-regular fa-heart fa-2x hearts__empty"></i>
+                    <i class="fa-solid fa-heart fa-2x hearts__full"></i>
+                  </div>
+                </article> 
+              </a>
              
               <!-- Le délice des sens -->
-              <article class="card">
-                <a href="./restaurants/menu4.html">
+              <a href="./restaurants/menu4.html">
+                <article class="card">
                   <img
                     src="./assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
                     alt="image assiette spéciale de poissons"
@@ -185,12 +180,12 @@
                       <p>Folie-Méricourt</p>
                     </div>
                   </div> 
-                </a>
-                <div class="hearts">
-                  <i class="fa-regular fa-heart fa-2x hearts__empty"></i>
-                  <i class="fa-solid fa-heart fa-2x hearts__full"></i>
-                </div>
-              </article>
+                  <div class="hearts">
+                    <i class="fa-regular fa-heart fa-2x hearts__empty"></i>
+                    <i class="fa-solid fa-heart fa-2x hearts__full"></i>
+                  </div>
+                </article> 
+              </a>
              
             </div>
           </section>
@@ -203,20 +198,20 @@
         </div>
 
         <ul class="footer-inside__list">
-          <li>
+          <li class="list-with">
             <!-- Icône ustensiles -->
             <i class="fa-solid fa-utensils"></i>
             <p>Proposer un restaurant</p>
           </li>
-          <li>
+          <li class="list-with space">
             <!-- Icône mains -->
             <i class="fa-solid fa-handshake-angle"></i>
             <p>Devenir partenaire</p>
           </li>
-          <li>
+          <li class="list-without">
             <p>Mentions légales</p>
           </li>
-          <li>
+          <li class="list-without">
             <p>Contact</p>
           </li>
         </ul>
