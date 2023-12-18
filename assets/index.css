@@ -304,6 +304,16 @@ input {
 }
 
 /**** COEURS ****/
+.description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hearts {
+  position: relative;
+}
+
 .hearts:hover .hearts__empty {
   opacity: 0;
   color: white;
@@ -315,11 +325,15 @@ input {
 }
 
 .hearts__empty {
+  position: absolute;
+  cursor: pointer;
   opacity: 1;
   color: black;
 }
 
 .hearts__full {
+  position: absolute;
+  cursor: pointer;
   opacity: 0;
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
@@ -567,33 +581,10 @@ input {
     right: 40px;
   }
   /* ANIMATION COEUR */
-  .description {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
   .hearts {
-    position: relative;
-    /* right: 35px; */
-    /* bottom: 20px; */
-    /*
-    padding-right: 50px;*/
-  }
-  .hearts:hover .hearts__empty {
-    opacity: 0;
-    transition: 0.3s ease-in-out;
-  }
-  .hearts:hover .hearts__full {
-    opacity: 1;
-    transition: 0.3s ease-in-out;
-  }
-  .hearts__empty {
-    position: absolute;
-    cursor: pointer;
-  }
-  .hearts__full {
-    position: absolute;
-    cursor: pointer;
+    right: 10px;
+    bottom: 20px;
+    padding-right: 50px;
   }
   /* MENUS */
   .main-menu {
@@ -913,21 +904,8 @@ input {
   }
   /* ANIMATION COEUR */
   .hearts {
-    position: absolute;
-    right: 45px;
-    bottom: 20px;
-  }
-  .hearts__empty {
-    position: absolute;
-    cursor: pointer;
-    right: 45px;
-    bottom: 20px;
-  }
-  .hearts__full {
-    position: absolute;
-    cursor: pointer;
-    right: 45px;
-    bottom: 20px;
+    right: 60px;
+    bottom: 15px;
   }
   /* MENUS T-D */
   .image img {
