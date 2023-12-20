@@ -238,7 +238,6 @@ input {
 }
 
 .restaurants-cards a {
-  pointer-events: auto;
   position: relative;
   text-decoration: none;
   color: white;
@@ -365,13 +364,13 @@ input {
   border-top-left-radius: 70px;
   border-top-right-radius: 70px;
   border-color: #F6F6F6;
-  margin-top: -50px;
+  margin-top: -65px;
   position: relative;
 }
 
 .menu {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 .menu .menu__title {
@@ -381,6 +380,36 @@ input {
   font-size: 28px;
   line-height: 40.82px;
   margin-bottom: 0;
+}
+
+/* ANIMATION COEUR MENU */
+.hm {
+  margin-bottom: 20px;
+}
+
+.hm:hover .hm__empty {
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.hm:hover .hm__full {
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.hm__empty {
+  position: absolute;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.hm__full {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 /*** SECTION ENTREES PLATS DESSERTS + ANIMATION ***/
@@ -393,8 +422,6 @@ input {
 .bloc .bloc__entrees {
   font-weight: 300;
   font-size: 16px;
-  padding-left: 10px;
-  margin-top: 40px;
 }
 .bloc .bloc__entrees .bloc__entrees--title::before {
   content: "";
@@ -432,7 +459,6 @@ input {
   border: solid;
   border-color: white;
   border-radius: 15px;
-  width: 90%;
   margin-left: 17px;
   margin-bottom: 20px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
@@ -466,7 +492,9 @@ input {
   font-size: 16px;
   font-family: "Roboto";
   margin-bottom: 20px;
-  margin-left: 180px;
+  /*
+  margin-left:180px;
+  */
 }
 .command:hover {
   opacity: 0.8;
@@ -508,7 +536,7 @@ input {
 /************************************/
 /******** Mobile ******/
 /* Small devices (mobile, less/equal than 320px) */
-@media screen and (max-width: 767.98px) {
+@media (max-width: 767.98px) {
   body {
     margin: 0;
   }
@@ -613,6 +641,7 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 30px;
   }
   .menu .menu__title {
     font-family: "Shrikhand";
@@ -623,7 +652,7 @@ input {
     margin-bottom: 0;
     margin-right: 40px;
   }
-  /* ANIMATION COEUR */
+  /* ANIMATION COEUR MENU */
   .hm {
     margin-bottom: 20px;
   }
@@ -658,7 +687,7 @@ input {
     font-weight: 300;
     font-size: 16px;
     padding-left: 13px;
-    margin-top: 40px;
+    margin-top: 30px;
   }
   .bloc .bloc__entrees .bloc__entrees--title::before {
     content: "";
@@ -681,7 +710,7 @@ input {
     border: solid;
     border-color: white;
     border-radius: 15px;
-    width: 90%;
+    width: 88%;
     margin-left: 23px;
     margin-bottom: 20px;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
@@ -698,11 +727,10 @@ input {
     font-family: "Roboto";
     font-weight: 700;
     font-size: 15px;
-    transition: transform 250ms ease-out;
   }
   .check {
     position: absolute;
-    right: -25px;
+    right: -30px;
     z-index: 3;
     top: -3px;
     border: solid;
@@ -712,22 +740,22 @@ input {
     padding: 19px 18px;
     color: white;
     background-color: #99E2D0;
-    opacity: 0;
+    overflow: hidden;
     transition: transform 250ms ease-out;
+    opacity: 0;
   }
-  .check:hover {
+  .cards__content:active {
+    margin-right: 60px;
+  }
+  .subtitle :active {
+    text-overflow: ellipsis " [..]";
+    overflow: hidden;
+    white-space: unset;
+  }
+  .check:active {
     opacity: 1;
-    right: 0;
-    transform: 250ms ease-out;
-    transform: translateX(-5px);
-  }
-  .subtitle__euro:hover {
-    color: green;
-    margin-right: 50px;
-    transform: translateX(10px);
-  }
-  .subtitle p:hover {
-    text-overflow: ellipsis;
+    transition: transform 250ms ease-out;
+    transform: translateX(-27px);
   }
   /*** BOUTON COMMANDES ***/
   .command {
@@ -769,7 +797,7 @@ input {
 /************************************/
 /****** Media queries T & D ***********/
 /* Medium devices (tablets, less/equal than 768px) */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024.98px) {
   .header {
     box-shadow: none;
   }
@@ -778,6 +806,100 @@ input {
   }
   .reservation__title {
     font-size: 40px;
+  }
+  /* FONCTIONNEMENT T-D */
+  .functioning {
+    display: flex;
+    align-items: center;
+  }
+  .functioning .functioning__title {
+    align-self: flex-start;
+    margin-left: 64px;
+  }
+  .functioning .functioning__buttons {
+    display: flex;
+    flex-direction: row;
+    /*
+    width: 100%;  */
+    justify-content: center;
+    gap: 30px;
+  }
+  .button {
+    width: 19%;
+    padding: 10px 20px 10px 0px;
+  }
+  .number {
+    position: relative;
+    /* z-index: 3; */
+    left: -30px;
+    right: 20px;
+  }
+  /*********/
+  /* RESTAURANTS T-D */
+  .restaurants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+  .restaurants .restaurants__title {
+    align-self: flex-start;
+    margin-left: 62px;
+  }
+  .restaurants-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: unset;
+    gap: 50px;
+    margin-left: 180px;
+    margin-left: 45px;
+  }
+  .restaurants-cards a {
+    width: 45%;
+  }
+  .card {
+    position: relative;
+    height: 310px;
+  }
+  .restaurants .card img {
+    height: 231px;
+    width: 100%;
+  }
+  .label {
+    right: 55px;
+  }
+  /* ANIMATION COEUR */
+  .hearts {
+    right: 60px;
+    bottom: 15px;
+  }
+  /* MENUS T-D */
+  .image img {
+    height: 383px;
+  }
+  .meal {
+    display: flex;
+    flex-direction: column;
+    margin-left: 180px;
+    margin-right: 180px;
+  }
+  .menu {
+    gap: 40px;
+  }
+  .bloc {
+    display: flex;
+    flex-direction: column;
+    margin-left: 180px;
+    margin-right: 180px;
+  }
+  .bloc__entrees {
+    margin-left: 10px;
+  }
+  .cards {
+    width: 88%;
   }
   .check {
     position: absolute;
@@ -798,16 +920,20 @@ input {
   .check:hover {
     opacity: 1;
     right: 0;
-    transform: 250ms ease-out;
+    transition: transform 250ms ease-out;
     transform: translateX(-5px);
   }
   .subtitle__euro:hover {
-    color: green;
     margin-right: 50px;
     transform: translateX(10px);
   }
   .subtitle p:hover {
     text-overflow: ellipsis;
+  }
+  .command {
+    align-self: center;
+    margin-left: 0px;
+    margin-right: 20px;
   }
   /* FOOTER T-D */
   .footer-inside {
@@ -846,28 +972,29 @@ input {
   }
   /* FONCTIONNEMENT T-D */
   .functioning {
-    padding: 50px 180px 0px 0px;
+    display: flex;
+    align-items: center;
   }
   .functioning .functioning__title {
     margin-left: 180px;
+    align-self: flex-start;
   }
   .functioning .functioning__buttons {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    /* justify-content: center; */
-    margin-left: 180px;
+    /*
+    width: 100%; 
+    justify-content: center; */
     gap: 50px;
   }
   .button {
-    width: 19%;
     padding: 10px 20px 10px 0px;
     margin-left: 20px;
   }
   .number {
     position: relative;
     /* z-index: 3; */
-    left: px;
+    left: -15px;
     right: 20px;
   }
   /* RESTAURANTS T-D */
@@ -884,19 +1011,20 @@ input {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: unset;
     gap: 50px;
-    margin-left: 180px;
+    margin-left: 65px;
   }
   .restaurants-cards a {
-    width: 45%;
+    width: 42%;
   }
   .card {
     position: relative;
-    height: 310px;
+    height: 330px;
   }
   .restaurants .card img {
-    height: 231px;
+    height: 250px;
     width: 100%;
   }
   .label {
@@ -912,19 +1040,29 @@ input {
     height: 383px;
   }
   .meal {
+    display: flex;
+    flex-direction: column;
     margin-left: 180px;
     margin-right: 180px;
+  }
+  .menu {
+    gap: 40px;
   }
   .bloc {
     display: flex;
     flex-direction: column;
-    margin-left: 50px;
+    margin-left: 180px;
+    margin-right: 180px;
+  }
+  .bloc__entrees {
+    margin-left: 10px;
   }
   .command {
     align-self: center;
     margin-left: 0px;
     margin-right: 20px;
   }
+  /** ANIMATION CHECK **/
   .check {
     position: absolute;
     right: -25px;
@@ -944,16 +1082,12 @@ input {
   .check:hover {
     opacity: 1;
     right: 0;
-    transform: 250ms ease-out;
+    transition: transform 250ms ease-out;
     transform: translateX(-5px);
   }
   .subtitle__euro:hover {
-    color: green;
     margin-right: 50px;
     transform: translateX(10px);
-  }
-  .subtitle p:hover {
-    text-overflow: ellipsis;
   }
   /* FOOTER T-D */
   .footer-inside {
@@ -976,7 +1110,7 @@ input {
     gap: 18px;
   }
   .space {
-    margin-right: 35px;
+    margin-right: 40px;
   }
 }
 
