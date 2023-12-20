@@ -504,7 +504,9 @@ input {
   padding: 19px 18px;
   color: white;
   background-color: #99E2D0;
-  transition: transform 250ms ease-out;
+  /*
+   transition: transform 250ms ease-out;
+   */
   opacity: 0;
 }
 
@@ -518,11 +520,13 @@ input {
   white-space: unset;
 }
 
+/*
 .check:active {
-  opacity: 1;
-  transition: transform 250ms ease-out;
-}
+    opacity:1;
+    transition: transform 250ms ease-out;
 
+}
+*/
 /** BOUTON COMMANDES **/
 .command {
   align-self: center;
@@ -648,7 +652,7 @@ input {
     margin-bottom: 18px;
   }
   .label {
-    right: 40px;
+    right: 10%;
   }
   /* ANIMATION COEUR */
   .hearts {
@@ -753,15 +757,32 @@ input {
     border-color: white;
     border-radius: 15px;
     width: 88%;
-    margin-left: 23px;
-    margin-bottom: 20px;
+    /*
+    margin-left:23px;
+
+    margin-bottom:20px;*/
+    margin: 5px;
+    padding: 10px;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   }
   .cards .cards__content {
     padding: 0px 20px;
     line-height: 5px;
   }
+  .cards h3 {
+    margin: 0;
+  }
+  .cards:active .subtitle__euro {
+    padding-right: 70px;
+  }
+  .cards:active .div-check {
+    transform: translateX(0px);
+  }
   .subtitle {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  .txt {
     display: flex;
     justify-content: space-between;
   }
@@ -769,25 +790,23 @@ input {
     font-family: "Roboto";
     font-weight: 700;
     font-size: 15px;
+    margin-bottom: 0;
+    transition: padding-right 500ms;
+    padding-right: 0px;
   }
   .check {
     position: absolute;
-    z-index: 3;
-    right: -30px;
+    right: 0px;
     top: -3px;
   }
-  .cards__content:active {
-    margin-right: 60px;
-  }
-  .subtitle :active {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: unset;
-  }
-  .check:active {
-    opacity: 1;
-    transition: transform 250ms ease-out;
-    transform: translateX(-27px);
+  .div-check {
+    position: absolute;
+    transition: transform 450ms ease-in-out;
+    transform: translateX(50px);
+    background-color: #008766;
+    right: 0px;
+    top: 0px;
+    width: 60px;
   }
   /*** BOUTON COMMANDES ***/
   .command {
@@ -1006,7 +1025,7 @@ input {
     width: 75%;
   }
   .button {
-    padding: 10px 20px 10px 0px;
+    padding: 10px 60px 10px 0px;
     margin-left: 20px;
   }
   .number {

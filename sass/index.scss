@@ -633,8 +633,9 @@ input {
     color: white;
     background-color: $tertiary-color;
 
-   
+   /*
     transition: transform 250ms ease-out;
+    */
     opacity:0;
        
 }
@@ -650,11 +651,13 @@ input {
     white-space:unset;
 }
 
+/*
 .check:active {
     opacity:1;
     transition: transform 250ms ease-out;
     
 }
+*/
 
 
 /** BOUTON COMMANDES **/
@@ -821,7 +824,7 @@ input {
 
 
     .label {
-        right:40px;
+        right:10%;
     }
 
     /* ANIMATION COEUR */
@@ -969,9 +972,12 @@ input {
         border-radius:15px;
 
         width:88%;
-    
+        /*
         margin-left:23px;
-        margin-bottom:20px;
+        
+        margin-bottom:20px;*/
+        margin:5px;
+        padding: 10px;
 
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
 
@@ -982,47 +988,71 @@ input {
         }
     }
 
+    .cards h3 {
+        margin: 0;
+    }
+
+
+    .cards:active {
+
+        .subtitle__euro {
+            padding-right:70px;
+           
+        }
+
+        .div-check {
+            
+            transform: translateX(0px);
+        }
+
+    }
+
     .subtitle{
-        display: flex;
-        justify-content: space-between;
-        
+        margin-top: 5px;
+        margin-bottom: 0;
         
     }
     
+    .txt {
+        display: flex;
+        justify-content: space-between;
+    }
     
     .subtitle__euro {
         font-family: $font-family-two;
         font-weight: 700;
         font-size: 15px;
-        
+        margin-bottom: 0;
+        transition: padding-right 500ms;
+        padding-right:0px;
     }
+
+
+
 
     .check {
         position: absolute;
-        z-index: 3;
-        right: -30px;
+        
+        right: 0px;
         top:-3px;
-
        
        
     }
     
-    .cards__content:active {
-        margin-right:60px; 
-    }
-
-    .subtitle :active {
+    .div-check {
+        position: absolute;
+        transition: transform 450ms ease-in-out;
+    
+        transform: translateX(50px);
         
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space:unset;
+
+        background-color: #008766;
+        right:0px;
+        top:0px;
+        width:60px;
     }
 
-    .check:active {
-        opacity:1;
-        transition: transform 250ms ease-out;
-        transform: translateX(-27px);
-    }
+   
 
     
     /*** BOUTON COMMANDES ***/
@@ -1346,7 +1376,7 @@ input {
     
     .button {
     
-        padding: 10px 20px 10px 0px;
+        padding: 10px 60px 10px 0px;
         margin-left: 20px;
     }
 
@@ -1449,6 +1479,7 @@ input {
     .cards {
         margin-left: 0px;
     }
+
 
     .command {
         align-self: center;
