@@ -359,13 +359,15 @@ input {
 }
 
 .meal {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: -65px;
   background-color: #F6F6F6;
   border: solid;
   border-top-left-radius: 70px;
   border-top-right-radius: 70px;
   border-color: #F6F6F6;
-  margin-top: -65px;
-  position: relative;
 }
 
 .menu {
@@ -468,19 +470,63 @@ input {
   line-height: 5px;
 }
 
+/*
+.subtitle{
+    display: flex;
+    justify-content: space-between;
+
+    .subtitle__euro {
+        font-family: $font-family-two;
+        font-weight: 700;
+        font-size: 15px;
+        align-self: center;
+    }
+}
+*/
 .subtitle {
   display: flex;
   justify-content: space-between;
 }
-.subtitle .subtitle__euro {
+
+.subtitle__euro {
   font-family: "Roboto";
   font-weight: 700;
   font-size: 15px;
-  align-self: center;
+}
+
+.check {
+  position: absolute;
+  z-index: 3;
+  border: solid;
+  border-width: 0px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 19px 18px;
+  color: white;
+  background-color: #99E2D0;
+  transition: transform 250ms ease-out;
+  opacity: 0;
+}
+
+.cards__content:active {
+  margin-right: 60px;
+}
+
+.subtitle :active {
+  text-overflow: ellipsis " [..]";
+  overflow: hidden;
+  white-space: unset;
+}
+
+.check:active {
+  opacity: 1;
+  transition: transform 250ms ease-out;
 }
 
 /** BOUTON COMMANDES **/
 .command {
+  align-self: center;
+  margin-bottom: 20px;
   border-radius: 25px;
   border: solid;
   border-width: 0;
@@ -491,10 +537,6 @@ input {
   padding: 15px 20px;
   font-size: 16px;
   font-family: "Roboto";
-  margin-bottom: 20px;
-  /*
-  margin-left:180px;
-  */
 }
 .command:hover {
   opacity: 0.8;
@@ -730,25 +772,15 @@ input {
   }
   .check {
     position: absolute;
-    right: -30px;
     z-index: 3;
+    right: -30px;
     top: -3px;
-    border: solid;
-    border-width: 0px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding: 19px 18px;
-    color: white;
-    background-color: #99E2D0;
-    overflow: hidden;
-    transition: transform 250ms ease-out;
-    opacity: 0;
   }
   .cards__content:active {
     margin-right: 60px;
   }
   .subtitle :active {
-    text-overflow: ellipsis " [..]";
+    text-overflow: ellipsis;
     overflow: hidden;
     white-space: unset;
   }
@@ -769,8 +801,6 @@ input {
     padding: 15px 20px;
     font-size: 16px;
     font-family: "Roboto";
-    margin-bottom: 20px;
-    margin-left: 180px;
   }
   .command:hover {
     opacity: 0.8;
@@ -883,8 +913,8 @@ input {
   .meal {
     display: flex;
     flex-direction: column;
-    margin-left: 180px;
-    margin-right: 180px;
+    margin-left: 100px;
+    margin-right: 100px;
   }
   .menu {
     gap: 40px;
@@ -892,8 +922,8 @@ input {
   .bloc {
     display: flex;
     flex-direction: column;
-    margin-left: 180px;
-    margin-right: 180px;
+    margin-left: 100px;
+    margin-right: 100px;
   }
   .bloc__entrees {
     margin-left: 10px;
@@ -906,16 +936,6 @@ input {
     right: -25px;
     z-index: 3;
     top: -3px;
-    border: solid;
-    border-width: 0px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding: 19px 18px;
-    color: white;
-    background-color: #99E2D0;
-    opacity: 0;
-    transition: transform 250ms ease-out;
-    animation: check;
   }
   .check:hover {
     opacity: 1;
@@ -926,9 +946,6 @@ input {
   .subtitle__euro:hover {
     margin-right: 50px;
     transform: translateX(10px);
-  }
-  .subtitle p:hover {
-    text-overflow: ellipsis;
   }
   .command {
     align-self: center;
@@ -986,6 +1003,7 @@ input {
     width: 100%; 
     justify-content: center; */
     gap: 50px;
+    width: 75%;
   }
   .button {
     padding: 10px 20px 10px 0px;
@@ -1054,8 +1072,8 @@ input {
     margin-left: 180px;
     margin-right: 180px;
   }
-  .bloc__entrees {
-    margin-left: 10px;
+  .cards {
+    margin-left: 0px;
   }
   .command {
     align-self: center;
@@ -1065,28 +1083,18 @@ input {
   /** ANIMATION CHECK **/
   .check {
     position: absolute;
-    right: -25px;
+    right: -60px;
     z-index: 3;
-    top: -3px;
-    border: solid;
-    border-width: 0px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding: 19px 18px;
-    color: white;
-    background-color: #99E2D0;
-    opacity: 0;
-    transition: transform 250ms ease-out;
-    animation: check;
+    top: 50px;
   }
-  .check:hover {
+  .check:active {
     opacity: 1;
     right: 0;
     transition: transform 250ms ease-out;
     transform: translateX(-5px);
   }
-  .subtitle__euro:hover {
-    margin-right: 50px;
+  .subtitle__euro:active {
+    margin-right: 70px;
     transform: translateX(10px);
   }
   /* FOOTER T-D */
