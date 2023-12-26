@@ -239,8 +239,12 @@ input {
 }
 
 .restaurants-cards {
+  max-width: 1260px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 18px;
 }
 
 .restaurants-cards a {
@@ -251,18 +255,14 @@ input {
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   object-fit: cover;
 }
 
-/*
-
-.restaurants-cards a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-*/
 .card {
+  height: 251px;
+  margin-bottom: 18px;
   border-radius: 15px;
   border-width: 0px;
   background-color: white;
@@ -326,6 +326,9 @@ input {
 
 .hearts {
   position: relative;
+  right: 10px;
+  bottom: 20px;
+  padding-right: 50px;
 }
 
 .hearts:hover .hearts__empty {
@@ -432,22 +435,25 @@ input {
 }
 
 /*** SECTION ENTREES PLATS DESSERTS + ANIMATIONS ***/
-.bloc {
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   font-family: "Roboto";
   transition: opacity 1s ease-in-out;
   animation: bloc 1s alternate forwards;
   opacity: 0;
+  margin-top: 10px;
   /*
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   */
 }
-.bloc .bloc__entrees {
+.categories .categories__title {
   font-weight: 300;
   font-size: 16px;
-  padding-left: 13px;
-  margin-top: 30px;
+  align-self: flex-start;
 }
-.bloc .bloc__entrees .bloc__entrees--title::before {
+.categories .categories__title .categories__title--border::before {
   content: "";
   position: absolute;
   background-color: #99E2D0;
@@ -510,6 +516,9 @@ input {
 .cards:active .div-check {
   transform: translateX(0px);
 }
+.cards:active .check {
+  opacity: 1;
+}
 
 .subtitle {
   margin-top: 5px;
@@ -538,16 +547,10 @@ input {
   border-width: 0px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  padding: 19px 18px;
+  padding: 21px 19px;
   color: white;
   background-color: #99E2D0;
   opacity: 0;
-}
-
-.check {
-  position: absolute;
-  right: 0px;
-  top: -3px;
 }
 
 .div-check {
@@ -595,7 +598,6 @@ input {
 .logo-content {
   font-family: "Shrikhand";
   margin-top: 20px;
-  margin-bottom: 10px;
   margin-left: 40px;
 }
 
@@ -623,44 +625,6 @@ input {
   line-height: 0;
 }
 
-/**** A MODIFIER ****/
-/* Fonctionnement */
-/*
-
-
-
-.list {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-    z-index: 1;
-}
-
-
-
-.restaurants-cards {
-    @include column;
-    justify-content: space-around;
-    align-items: center;
-    gap:18px;
-
-}
-
-.card {
-    height:251px;
-    margin-bottom: 18px;
-}
-
-
-.hearts {
-    right: 10px;
-    bottom: 20px; 
-    padding-right: 50px;
-}
-
-
-*/
 /************************************/
 /****** Media queries T & D ***********/
 /* Large devices (desktop, less/equal than 1024px) */
@@ -720,7 +684,6 @@ input {
     flex-wrap: wrap;
     align-items: unset;
     gap: 50px;
-    margin-left: 65px;
   }
   .restaurants-cards a {
     width: 42%;
@@ -738,7 +701,7 @@ input {
   }
   /* ANIMATION COEUR */
   .hearts {
-    right: 60px;
+    right: 20px;
     bottom: 15px;
   }
   /* MENUS T-D */
@@ -754,14 +717,21 @@ input {
   .menu {
     gap: 40px;
   }
-  .bloc {
+  .menu .menu__title {
+    margin-right: 10px;
+  }
+  .categories {
     display: flex;
     flex-direction: column;
     margin-left: 180px;
     margin-right: 180px;
   }
+  .categories .categories__title {
+    padding-left: 0px;
+  }
   .cards {
     margin-left: 0px;
+    width: 97%;
   }
   /** ANIMATION CHECK **/
   /* FOOTER T-D */

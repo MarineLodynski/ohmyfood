@@ -289,6 +289,7 @@ input {
     z-index: 1;
 }
 
+
 /* RESTAURANTS */
 .restaurants {
     background-color: $background-color;
@@ -302,10 +303,12 @@ input {
 }
 
 
-
 .restaurants-cards {
+    max-width: 1260px;
     @include column;
-
+    justify-content: space-around;
+    align-items: center;
+    gap:18px;
 }
 
 .restaurants-cards a {
@@ -317,21 +320,17 @@ input {
     width: 100%;
 
     @include column;
+    justify-content: center;
+    align-items: center;
     object-fit: cover;
 
 }
 
-/*
-
-.restaurants-cards a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-*/
 
 
-.card {
+.card { 
+    height:251px;
+    margin-bottom: 18px;
     border-radius: 15px;
     border-width: 0px;
     background-color: $color-one;
@@ -340,6 +339,7 @@ input {
 
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
 }
+
 
 .restaurants .card img {
     height:174px;
@@ -404,6 +404,10 @@ input {
 
 .hearts {
     position: relative;
+    right: 10px;
+    bottom: 20px; 
+    padding-right: 50px;
+    
 }
 
 
@@ -442,7 +446,6 @@ input {
 }
 
 
-
 /***************/
 /* MENUS */
 
@@ -450,15 +453,12 @@ input {
     position: relative;
 }
 
-
 .main-menu {
     /*
     position:relative;
     */
     margin:0;
 }
-
-
 
 .image__food{
     height: 300px;  
@@ -542,22 +542,25 @@ input {
 
 
 /*** SECTION ENTREES PLATS DESSERTS + ANIMATIONS ***/
-.bloc {
+.categories {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
     font-family: $font-family-two;
     transition: opacity 1s ease-in-out;
     animation: bloc 1s  alternate forwards;
     opacity:0;
+    margin-top:10px;
     /*
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     */
 
-    .bloc__entrees{
+    .categories__title{
         font-weight:300;
         font-size:16px;
-        padding-left:13px;
-        margin-top: 30px;
-   
-        .bloc__entrees--title::before {
+        align-self: flex-start;
+        
+        .categories__title--border::before {
             content:"";
             position:absolute;
             background-color: $tertiary-color;
@@ -642,8 +645,11 @@ input {
     }
 
     .div-check {
-        
         transform: translateX(0px);
+    }
+
+    .check {
+        opacity:1;
     }
 
 }
@@ -678,21 +684,13 @@ input {
     border-width: 0px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    padding: 19px 18px;
+    padding: 21px 19px;
     color: $color-one;
     background-color: $tertiary-color;
 
     opacity:0;
-       
 }
-.check {
-    position: absolute;
-    
-    right: 0px;
-    top:-3px;
-   
-   
-}
+
 
 .div-check {
     position: absolute;
@@ -737,7 +735,6 @@ input {
 }
 
 
-
 /* Footer all */
 .footer-inside {
     @include column;
@@ -749,7 +746,6 @@ input {
 .logo-content{
     font-family: $font-family-one;
     margin-top:20px;
-    margin-bottom:10px; 
     margin-left:40px;
     
 }
@@ -778,44 +774,7 @@ input {
     line-height: 0;
 }
 
-/**** A MODIFIER ****/
-/* Fonctionnement */
-/*
 
-
-
-.list {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-    z-index: 1;
-}
-
-
-
-.restaurants-cards {
-    @include column;
-    justify-content: space-around;
-    align-items: center;
-    gap:18px;
-
-}
-
-.card {
-    height:251px;
-    margin-bottom: 18px;
-}
-
-
-.hearts {
-    right: 10px;
-    bottom: 20px; 
-    padding-right: 50px;
-}
-
-
-*/
 
 /************************************/
 
@@ -901,7 +860,7 @@ input {
         align-items: unset;
 
         gap: 50px;
-        margin-left: 65px;
+        
     
     }
 
@@ -928,13 +887,9 @@ input {
 
     /* ANIMATION COEUR */
 
-
-
     .hearts {
-        
-        right: 60px;
+        right: 20px;
         bottom: 15px;
-    
     }
     
 
@@ -956,17 +911,26 @@ input {
         gap:40px;
     }
 
+    .menu .menu__title {
+        margin-right: 10px;
+    }
 
-    .bloc {
+    .categories {
         @include column;
-        
         margin-left: 180px;
         margin-right: 180px;
         
     }
     
+    .categories .categories__title {
+        padding-left: 0px;
+
+
+    }
+
     .cards {
         margin-left: 0px;
+        width:97%;
     }
 
 
