@@ -46,8 +46,11 @@ img {
     align-items: center; 
     text-align: center;
 
+    
     width:100%;
     height:100%;
+    
+    
     background: $color-one;
     
     
@@ -64,10 +67,16 @@ img {
 
 
 .dot {
+    top:50%;
+    left:50%;
+    
     width:50px;
     height:50px;
     border-radius:50%;
-    margin: 0px 15px;
+    /*
+    margin: 0px 15px;*/
+    
+    
 }
 
 .d1 {
@@ -304,7 +313,7 @@ input {
 
 
 .restaurants-cards {
-    max-width: 1260px;
+    
     @include column;
     justify-content: space-around;
     align-items: center;
@@ -471,12 +480,12 @@ input {
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-top:-65px;
+    margin-top:-55px;
    
     background-color: $background-color;
     border: solid;
-    border-top-left-radius: 70px;
-    border-top-right-radius: 70px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
     border-color: $background-color;
 
    
@@ -551,9 +560,6 @@ input {
     animation: bloc 1s  alternate forwards;
     opacity:0;
     margin-top:10px;
-    /*
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-    */
 
     .categories__title{
         font-weight:300;
@@ -803,10 +809,11 @@ input {
     .functioning {
         display: flex;
         align-items: center;
+        max-width: 1260px;
+        margin:0 auto;
 
 
         .functioning__title {
-            margin-left:180px;
             align-self: flex-start;
         }
 
@@ -814,12 +821,11 @@ input {
         .functioning__buttons {
             display: flex;
             flex-direction: row;
-            /*
-            width: 100%; 
-            justify-content: center; */
+            justify-content: center;
+            align-items:center; 
            
             gap: 50px;
-            width:75%;
+            width:100%;
             
         }
     }
@@ -828,6 +834,7 @@ input {
     
         padding: 10px 60px 10px 0px;
         margin-left: 20px;
+        width:100%;
     }
 
     .number {
@@ -847,18 +854,21 @@ input {
         padding-bottom:30px;
         
         .restaurants__title {
-            margin-left:180px;
+            margin-top:30px;
+            margin-bottom:30px;
         }
     }
 
+    .restaurants h2,
+    .restaurants-cards {
+    max-width: 1260px;
+    margin:0 auto;
+    }
+
+
     .restaurants-cards {
         display: flex;
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-        
-        align-items: unset;
-
+        flex-flow: row wrap;
         gap: 50px;
         
     
@@ -901,14 +911,16 @@ input {
 
     .meal {
         @include column;
+        max-width: 1055px;;
+        margin-left:auto;
+        margin-right:auto;
 
-        margin-left:180px;
-        margin-right:180px;
 
     }
 
     .menu {
         gap:40px;
+        margin-top: 30px;
     }
 
     .menu .menu__title {
@@ -933,10 +945,6 @@ input {
         width:97%;
     }
 
-
-
-    /** ANIMATION CHECK **/
-    
 
    
     /* FOOTER T-D */
