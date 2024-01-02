@@ -414,7 +414,7 @@ input {
 .hearts {
     position: relative;
     right: 10px;
-    bottom: 20px; 
+    bottom: 15px; 
     padding-right: 50px;
     
 }
@@ -552,14 +552,12 @@ input {
 
 /*** SECTION ENTREES PLATS DESSERTS + ANIMATIONS ***/
 .categories {
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
     font-family: $font-family-two;
     transition: opacity 1s ease-in-out;
     animation: bloc 1s  alternate forwards;
     opacity:0;
     margin-top:10px;
+    padding: 0px 30px;
 
     .categories__title{
         font-weight:300;
@@ -615,20 +613,14 @@ input {
     z-index: 0;
 
     background-color: $color-one;
-    border: solid;
-    border-color: $color-one;
     border-radius:15px;
    
-    width:88%;
-    margin:5px;
-    padding: 10px; 
+    margin-bottom:10px;
+    margin-left:0px;
+    padding: 12px; 
     
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-    /* Desktop
-    margin-left:17px;
-    margin-bottom:20px;
-    */
-
+    overflow: hidden;
     .cards__content{
         padding: 0px 20px;
         line-height: 5px;
@@ -643,7 +635,7 @@ input {
 }
 
 
-.cards:active {
+.cards:hover {
 
     .subtitle__euro {
         padding-right:70px;
@@ -651,7 +643,7 @@ input {
     }
 
     .div-check {
-        transform: translateX(0px);
+        transform: translateX(10px);
     }
 
     .check {
@@ -663,12 +655,16 @@ input {
 .subtitle{
     margin-top: 5px;
     margin-bottom: 0;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
     
 }
 
 .txt {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .subtitle__euro {
@@ -676,39 +672,33 @@ input {
     font-weight: 700;
     font-size: 15px;
     margin-bottom: 0;
-    transition: padding-right 500ms;
+    transition: padding-right 450ms; 
     padding-right:0px;
+}
+
+.div-check {
+    position: absolute; 
+    top:0px;
+    right:0px;
+    width:69px;
+
+    transition: transform 450ms ease-in-out;
+    transform: translateX(50px);
+}
+
+.div-check i {
+    font-size:20px;
 }
 
 
 .check {
     position: absolute;
-    top:-3px;
-    right:0px;
-
-    border: solid;
-    border-width: 0px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    padding: 21px 19px;
+    padding: 26px 21px;
     color: $color-one;
     background-color: $tertiary-color;
-
     opacity:0;
-}
-
-
-.div-check {
-    position: absolute;
-    transition: transform 450ms ease-in-out;
-
-    transform: translateX(50px);
-    
-
-    background-color: #008766;
-    right:0px;
-    top:0px;
-    width:60px;
 }
 
 
@@ -794,6 +784,10 @@ input {
         .header__logo {
             height:34px;
         }
+
+        .header__arrow {
+            font-size:25px;
+        }
     }
 
     
@@ -824,7 +818,7 @@ input {
             justify-content: center;
             align-items:center; 
            
-            gap: 50px;
+            gap: 30px;
             width:100%;
             
         }
@@ -832,9 +826,9 @@ input {
     
     .button {
     
-        padding: 10px 60px 10px 0px;
-        margin-left: 20px;
-        width:100%;
+        padding: 10px 20px 10px 0px;
+       
+        width:22%;
     }
 
     .number {
@@ -881,25 +875,28 @@ input {
 
     .card {
         position: relative;
-        height:330px;
+        /*
+        height:310px;
+        */
+        height:100%;
+        width:100%;
     }
 
-    
     .restaurants .card img {
-        height: 250px;
+        height: 231px;
         width: 100%;
 
     }
 
     .label {
-        right:55px;
+        right:5%;
     }
 
     /* ANIMATION COEUR */
 
     .hearts {
         right: 20px;
-        bottom: 15px;
+        bottom: 20px;
     }
     
 
@@ -936,17 +933,10 @@ input {
     
     .categories .categories__title {
         padding-left: 0px;
-
-
     }
 
-    .cards {
-        margin-left: 0px;
-        width:97%;
-    }
+    
 
-
-   
     /* FOOTER T-D */
     .footer-inside {
         display: flex;
