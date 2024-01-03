@@ -229,36 +229,56 @@ input {
 /* BLOC FONCTIONNEMENT */
 
 .functioning {
+    /*
     @include column;
     margin-bottom:20px;
     position: relative;
 
     width:100%;
+    */
+
+    position: relative;
+    padding:30px 50px;
 
     .functioning__title{
+        /*
         @include section-title;
+        */
+        font-family: $font-family-two;
+        font-weight:700;
+    }
+
+
+    .functioning__buttons {
+        /*
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding:25px;
+        */
+
+        @include column ;
     }
 }
 
 .button {
     display: flex;
-    flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-
-    width: 80%;
-
+    /*
+    flex-direction: row;
+    margin-left:40px;
+    width: 80%; 
+    padding: 10px 20px 10px 0px;
+    padding: 10px;
+    */
+    
     background-color: $background-color;
     border-radius: 20px;
     border-width: 0;
-    margin-left:40px;
-    margin-bottom: 30px;
-    
-    padding: 10px;
     padding-left:30px;
-
+    margin-bottom: 30px;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-
 }
 
 .button i {
@@ -278,16 +298,13 @@ input {
 .number {
     position:absolute;
     z-index: 2;
-    left:30px;
-
+    left:42px;
     color:$color-one;
     border:solid;
     border-width:1px;
     background-color: $primary-color;
     padding:2px 7px;
     border-radius:20px;
-
-
 }
 
 .list {
@@ -302,12 +319,19 @@ input {
 /* RESTAURANTS */
 .restaurants {
     background-color: $background-color;
+    padding:30px 40px;
+    /*
     width: 100%;
     padding-top:10px;
     padding-bottom:30px;
+    */
 
     .restaurants__title {
+        /*
         @include section-title;
+        */
+        font-family:$font-family-two;
+        font-weight:700;
     }
 }
 
@@ -315,7 +339,9 @@ input {
 .restaurants-cards {
     
     @include column;
+    /*
     justify-content: space-around;
+    */
     align-items: center;
     gap:18px;
 }
@@ -330,11 +356,12 @@ input {
 
     @include column;
     justify-content: center;
+    /*
     align-items: center;
+   
     object-fit: cover;
-
+    */
 }
-
 
 
 .card { 
@@ -343,9 +370,9 @@ input {
     border-radius: 15px;
     border-width: 0px;
     background-color: $color-one;
-
+    /*
     width: 90%;
-
+    */
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -690,7 +717,6 @@ input {
     font-size:20px;
 }
 
-
 .check {
     position: absolute;
     border-top-right-radius: 15px;
@@ -802,41 +828,41 @@ input {
 
     .functioning {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        /*
         align-items: center;
-        max-width: 1260px;
+        */
+        max-width: 1140px;
         margin:0 auto;
-
-
-        .functioning__title {
-            align-self: flex-start;
-        }
 
 
         .functioning__buttons {
             display: flex;
             flex-direction: row;
+            /*
             justify-content: center;
             align-items:center; 
+            */
            
-            gap: 30px;
+            gap: 50px;
             width:100%;
             
         }
     }
     
     .button {
-    
-        padding: 10px 20px 10px 0px;
-       
-        width:22%;
+        padding: 13px 18px 13px 18px;
+        width:25%;
     }
 
     .number {
         position: relative;
         /* z-index: 3; */
-        left: -15px;
+        left: -30px;
+        /*
         right: 20px;
-
+        */
     }
 
 
@@ -862,10 +888,10 @@ input {
 
     .restaurants-cards {
         display: flex;
+        justify-content: center;
         flex-flow: row wrap;
-        gap: 50px;
-        
-    
+        column-gap: 100px;
+        row-gap: 50px;
     }
 
     .restaurants-cards a {
