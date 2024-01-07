@@ -402,7 +402,7 @@ input {
 
 .label {
     position:absolute;
-    right:10%;
+    right:5%;
     z-index:2;
 
     color: #008766;
@@ -655,7 +655,6 @@ input {
 
 
 .cards:hover {
-
     .subtitle__euro {
         padding-right:70px;
        
@@ -664,11 +663,6 @@ input {
     .div-check {
         transform: translateX(10px);
     }
-
-    .check {
-        opacity:1;
-    }
-
 }
 
 .subtitle{
@@ -702,7 +696,7 @@ input {
     width:69px;
 
     transition: transform 450ms ease-in-out;
-    transform: translateX(50px);
+    transform: translateX(70px);
 }
 
 .div-check i {
@@ -716,7 +710,10 @@ input {
     padding: 26px 21px;
     color: $color-one;
     background-color: $tertiary-color;
+    /*
     opacity:0;
+    */
+
 }
 
 
@@ -825,24 +822,13 @@ input {
 
     .functioning {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 30px 60px;
-        /*
-        align-items: center;
+        flex-flow: row wrap;
         max-width: 1140px;
         margin:0 auto;
-        */
-
-
+        
         .functioning__buttons {
             display: flex;
             flex-direction: row;
-            /*
-            justify-content: center;
-            align-items:center; 
-            */
-           
             gap: 50px;
             width:100%;
             
@@ -850,14 +836,10 @@ input {
     }
     
     .button {
-         display: flex;
+        display: flex;
         flex-wrap: nowrap;
         padding: 13px 18px 13px 0px;
-        width: 25%;
-        /*
-        padding: 13px 18px 13px 18px;
-        width:25%;
-        */
+        width: 45%;
     }
 
     .number {
@@ -869,9 +851,7 @@ input {
 
     /* RESTAURANTS T-D */
     .restaurants {
-        @include column;
-        padding-top:10px;
-        padding-bottom:30px;
+        padding:0px;
         
         .restaurants__title {
             margin-top:30px;
@@ -879,19 +859,22 @@ input {
         }
     }
 
-    .restaurants h2,
-    .restaurants-cards {
-    max-width: 1260px;
-    margin:0 auto;
+    .r1 {
+        display: flex;
+        flex-wrap: wrap;
+        padding:0px 40px;
+        max-width: 1140px;
+        margin: 0 auto;
     }
 
 
     .restaurants-cards {
         display: flex;
-        justify-content: center;
         flex-flow: row wrap;
+        justify-content: space-between;
         column-gap: 100px;
         row-gap: 50px;
+        margin-bottom:20px;
     }
 
     .restaurants-cards a {
@@ -909,9 +892,7 @@ input {
     }
 
     .restaurants .card img {
-        height: 231px;
         width: 100%;
-
     }
 
     .label {
@@ -971,8 +952,8 @@ input {
     }
 
     .logo-content {
-        margin-left: 70px;
-        margin-top: 10px;
+        margin-left: 60px;
+        margin-top: 7px;
         margin-bottom: 10px;
         margin-right: 40px;
     }
@@ -984,8 +965,14 @@ input {
         margin-right: 10px;
     }
 
+
     .list-with {
+        font-size:14px;
         gap: 18px;
+    }
+    
+    .list-without {
+        font-size:14px;
     }
 
     .space {
@@ -1024,30 +1011,22 @@ input {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        /*
-        align-items: center;
-        */
-        max-width: 1140px;
+        max-width: 1250px;
         margin:0 auto;
 
 
         .functioning__buttons {
             display: flex;
             flex-direction: row;
-            /*
-            justify-content: center;
-            align-items:center; 
-            */
-           
             gap: 50px;
             width:100%;
-            
         }
     }
     
     .button {
         padding: 13px 18px 13px 18px;
         width:25%;
+        flex-wrap: nowrap;
     }
 
     .number {
@@ -1063,9 +1042,7 @@ input {
 
     /* RESTAURANTS T-D */
     .restaurants {
-        @include column;
-        padding-top:10px;
-        padding-bottom:30px;
+       padding:0px;
         
         .restaurants__title {
             margin-top:30px;
@@ -1073,19 +1050,21 @@ input {
         }
     }
 
-    .restaurants h2,
-    .restaurants-cards {
-    max-width: 1260px;
-    margin:0 auto;
+    .r1 {
+        display: flex;
+        flex-wrap: wrap;
+        padding:0px 40px;
+        max-width: 1260px;
+        margin: 0 auto;
     }
-
 
     .restaurants-cards {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         flex-flow: row wrap;
         column-gap: 100px;
         row-gap: 50px;
+        margin-bottom:30px;
     }
 
     .restaurants-cards a {
@@ -1103,9 +1082,7 @@ input {
     }
 
     .restaurants .card img {
-        height: 231px;
         width: 100%;
-
     }
 
     .label {
@@ -1164,12 +1141,15 @@ input {
         padding-top:30px;
     }
 
-    .logo-content {
-        margin-left: 70px;
+    .logo-content { 
+        font-size:18px;
+        margin-left: 85px;
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-right: 40px;
+        margin-right: 60px;
     }
+
+   
 
     .footer-inside__list {
         display: flex;
