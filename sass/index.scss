@@ -11,7 +11,6 @@ $font-family-one: "Shrikhand";
 $font-family-two: "Roboto";
 
 
-
 @mixin column {
     display:flex;
     flex-direction: column;
@@ -1062,4 +1061,5 @@ input {
     .space {
         margin-right:40px;
     }
+
 }
