@@ -1,28 +1,38 @@
+/* Couleurs globales */
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 
 $background-color: #F6F6F6;
 $background-color2: #EAEAEA;
+$background-color3: #353535;
 
 $color-one : white;
+$color-two : black;
+$color-three: #008766;
+$color-four: #7E7E7E;
 
+/* Polices */
 $font-family-one: "Shrikhand";
 $font-family-two: "Roboto";
 
+$font-size-one : 14px;
+$font-size-two : 16px;
+$font-size-three : 18px;
+$font-size-four : 40px;
 
+/* Mixins */
 @mixin column {
     display:flex;
     flex-direction: column;
     
 }
 
-@mixin section-title{
-    margin-left:30px;
-    font-family: $font-family-two;
-    font-weight: 700;
-    
+@mixin dfrow {
+    display:flex;
+    flex-direction: row;
 }
+
 
 /************************************/
 body {
@@ -68,14 +78,9 @@ img {
 .dot {
     top:50%;
     left:50%;
-    
     width:50px;
     height:50px;
     border-radius:50%;
-    /*
-    margin: 0px 15px;*/
-    
-    
 }
 
 .d1 {
@@ -151,22 +156,21 @@ img {
     background-color:$background-color2;
     width: 100%;
     padding:10px 0px;
-   
-    
+
     .form__icon{
         padding:0px 4px;
     } 
 }
 
 ::placeholder{
-    color:black;
+    color:$color-two;
     opacity: 1;
     font-family: $font-family-two;
 }
 
 input {
     font-family: $font-family-two;
-    font-size: 16px;
+    font-size: $font-size-two;
     font-weight: 500;
     font-weight: bold;
 
@@ -195,8 +199,8 @@ input {
 
 .reservation__bloc p {
     font-weight: 300;
-    font-size: 18px;
-    color: #353535;
+    font-size: $font-size-three;
+    color: $background-color3;
 }
 
 .reservation__button{
@@ -205,16 +209,14 @@ input {
     border-width:0;
     background: linear-gradient(358deg, #9356DC -11.44%, #FF79DA 123.93%);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-
     color: $color-one;
     border-color: $background-color;
     padding: 15px 20px;
-    font-size: 16px;
+    font-size:$font-size-two;
     font-family: $font-family-two;
     font-weight: initial;
     text-decoration:none;
     
-
     &:hover{
         opacity: 0.8;
         transform: scale(1.02);
@@ -275,7 +277,7 @@ input {
 
 .button i {
 
-    color:#7E7E7E;
+    color:$color-four;
 
     &:hover{
         color:$primary-color;
@@ -283,7 +285,7 @@ input {
 }
 
 .button p {
-    font-size: 16px;
+    font-size: $font-size-two;
     font-weight: bold;
 }
 
@@ -327,9 +329,9 @@ input {
         position:absolute;
         right:5%;
         z-index:2;
-        color: #008766;
+        color: $color-three;
         font-family: $font-family-two;
-        font-size: 14px;
+        font-size: $font-size-one;
         line-height: 16px;
         padding:7px 9px;
         background-color: $tertiary-color;
@@ -351,7 +353,7 @@ input {
 
 
 .description-content{
-    color:black;
+    color:$color-two;
     line-height: 0;
     position: relative;
     z-index:1;
@@ -364,7 +366,7 @@ input {
 }
 
 .description-title {
-    font-size: 18px;
+    font-size: $font-size-three;
     font-weight: 700;
 }
 
@@ -392,7 +394,7 @@ input {
         position:absolute;
         cursor: pointer;
         opacity: 1;
-        color:black;
+        color:$color-two;
     }
 
     .hearts__full {
@@ -438,8 +440,7 @@ input {
 }
 
 .meal {
-    display: flex;
-    flex-direction: column;
+    @include column; 
     position: relative;
     margin-top:-55px;
     background-color: $background-color;
@@ -514,7 +515,7 @@ input {
 
     .categories__title{
         font-weight:300;
-        font-size:16px;
+        font-size: $font-size-two;
         align-self: flex-start;
         
         .categories__title--border::before {
@@ -656,7 +657,7 @@ input {
     color: $color-one;
     border-color: $background-color;
     padding: 15px 20px;
-    font-size: 16px;
+    font-size: $font-size-two;
     font-family: $font-family-two;
 
     &:hover{
@@ -672,7 +673,7 @@ input {
 /* Footer all */
 .footer{
     @include column;
-    background-color:#353535;
+    background-color:$background-color3;
     color:$color-one;
     width: 100%;
 
@@ -733,20 +734,19 @@ input {
     /* BLOC RESERVATION T */
 
     .reservation__title {
-        font-size: 40px;
+        font-size: $font-size-four;
     }
 
     /* FONCTIONNEMENT T */
 
     .functioning {
-        display: flex;
-        flex-flow: row wrap;
+        @include dfrow;
+        flex-wrap: wrap;
         max-width: 1140px;
         margin:0 auto;
         
         .functioning__buttons {
-            display: flex;
-            flex-direction: row;
+            @include dfrow;
             gap: 50px;
             width:100%;
             
@@ -778,8 +778,8 @@ input {
 
 
         .restaurants__cards {
-            display: flex;
-            flex-flow: row wrap;
+            @include dfrow;
+            flex-wrap:wrap;
             justify-content: space-between;
             column-gap: 100px;
             row-gap: 50px;
@@ -869,20 +869,19 @@ input {
         }
 
         .footer__list {
-            display: flex;
-            flex-direction: row;
+            @include dfrow;
             gap:10px;
             margin-right: 10px;
         }
     }
 
     .list-with {
-        font-size:14px;
+        font-size: $font-size-one;
         gap: 18px;
     }
     
     .list-without {
-        font-size:14px;
+        font-size: $font-size-one;
     }
 
     .space {
@@ -909,23 +908,21 @@ input {
     /* BLOC RESERVATION D */
 
     .reservation__title {
-        font-size: 40px;
+        font-size: $font-size-four;
     }
 
 
     /* FONCTIONNEMENT D */
 
     .functioning {
-        display: flex;
-        flex-direction: row;
+        @include dfrow;
         flex-wrap: wrap;
         max-width: 1250px;
         margin:0 auto;
 
 
         .functioning__buttons {
-            display: flex;
-            flex-direction: row;
+            @include dfrow;
             gap: 50px;
             width:100%;
         }
@@ -952,9 +949,9 @@ input {
         }
 
         .restaurants__cards {
-            display: flex;
+            @include dfrow;
             justify-content: space-between;
-            flex-flow: row wrap;
+            flex-wrap: wrap;
             column-gap: 100px;
             row-gap: 50px;
             margin-bottom:30px;
@@ -1038,7 +1035,7 @@ input {
         padding-top:30px;
 
         .footer__logo { 
-            font-size:18px;
+            font-size: $font-size-three;
             margin-left: 85px;
             margin-top: 10px;
             margin-bottom: 10px;
@@ -1046,8 +1043,7 @@ input {
         }
 
         .footer__list {
-            display: flex;
-            flex-direction: row;
+            @include dfrow;
             gap:10px;
             margin-right: 10px;
         }
