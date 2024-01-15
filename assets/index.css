@@ -14,7 +14,7 @@ img {
 /****/
 /* Animation loader */
 .loader-container {
-  position: absolute;
+  position: fixed;
   z-index: 3;
   display: flex;
   justify-content: center;
@@ -331,6 +331,7 @@ input {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  transform: scale(0);
 }
 
 .hearts:hover .hearts__empty {
@@ -341,6 +342,7 @@ input {
 .hearts:hover .hearts__full {
   opacity: 1;
   transition: 0.3s ease-in-out;
+  transform: scale(1);
 }
 
 /***************/
@@ -403,6 +405,7 @@ input {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  transform: scale(0);
 }
 
 .hm:hover .hm__empty {
@@ -412,6 +415,7 @@ input {
 .hm:hover .hm__full {
   opacity: 1;
   transition: 0.3s ease-in-out;
+  transform: scale(1);
 }
 
 /*** SECTION ENTREES PLATS DESSERTS + ANIMATIONS ***/
@@ -438,15 +442,15 @@ input {
   padding: 0px 10px;
 }
 
-.b1 {
+.bloc1 {
   animation-delay: 1s;
 }
 
-.b2 {
+.bloc2 {
   animation-delay: 2s;
 }
 
-.b3 {
+.bloc3 {
   animation-delay: 3s;
 }
 
@@ -474,6 +478,9 @@ input {
 /****/
 .cards h3 {
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cards:hover .subtitle__euro {

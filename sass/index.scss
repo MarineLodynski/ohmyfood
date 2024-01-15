@@ -47,7 +47,7 @@ img {
 /****/
 /* Animation loader */
 .loader-container {
-    position: absolute;
+    position: fixed;
     z-index: 3;
 
     display: flex;
@@ -405,6 +405,7 @@ input {
         background-clip: text;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
+        transform:scale(0);
     }
 }
 
@@ -419,6 +420,7 @@ input {
     .hearts__full{
         opacity: 1;
         transition: .3s ease-in-out;
+        transform:scale(1);
     }
 }
 
@@ -486,6 +488,7 @@ input {
         background-clip: text;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
+        transform:scale(0);
     }
 }
 
@@ -498,6 +501,7 @@ input {
      .hm__full{
         opacity: 1;
         transition: .3s ease-in-out;
+        transform:scale(1);
     }
 }
  
@@ -533,16 +537,16 @@ input {
 }
 
 
-.b1 {
+.bloc1 {
     animation-delay: 1s;
 }
 
-.b2 {
+.bloc2 {
    
     animation-delay: 2s;
 }
 
-.b3 {
+.bloc3 {
     
     animation-delay: 3s;
 }
@@ -580,6 +584,9 @@ input {
 
 .cards h3 {
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
