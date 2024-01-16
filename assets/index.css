@@ -322,26 +322,26 @@ input {
   cursor: pointer;
   opacity: 1;
   color: black;
+  transition: transform 0.3s ease-in-out;
 }
 .hearts .hearts__full {
   position: absolute;
   cursor: pointer;
-  opacity: 0;
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  transition: transform 0.3s ease-in-out;
   transform: scale(0);
 }
 
 .hearts:hover .hearts__empty {
   opacity: 0;
   color: white;
-  transition: 0.3s ease-in-out;
+  transform: scale(0);
 }
 .hearts:hover .hearts__full {
   opacity: 1;
-  transition: 0.3s ease-in-out;
   transform: scale(1);
 }
 
@@ -405,6 +405,7 @@ input {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  transition: transform 0.3s ease-in-out;
   transform: scale(0);
 }
 
@@ -414,7 +415,7 @@ input {
 }
 .hm:hover .hm__full {
   opacity: 1;
-  transition: 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   transform: scale(1);
 }
 

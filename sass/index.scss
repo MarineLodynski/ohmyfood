@@ -384,28 +384,31 @@ input {
     align-items: center;
 }
 
+
 .hearts {
     position: relative;
     right: 10px;
     bottom: 15px; 
-    padding-right: 50px;
+    padding-right: 50px; 
 
     .hearts__empty {
         position:absolute;
         cursor: pointer;
         opacity: 1;
         color:$color-two;
+        transition: transform .3s ease-in-out;
+        
     }
 
     .hearts__full {
         position:absolute;
         cursor: pointer;
-        opacity:0;
         background:linear-gradient(#9356DC,#FF79DA );
         background-clip: text;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
-        transform:scale(0);
+        transition: transform .3s ease-in-out;
+        transform: scale(0);
     }
 }
 
@@ -415,12 +418,12 @@ input {
    .hearts__empty {
         opacity: 0;
         color:$color-one;
-        transition: .3s ease-in-out;
+        transform: scale(0);
     }
+
     .hearts__full{
         opacity: 1;
-        transition: .3s ease-in-out;
-        transform:scale(1);
+        transform: scale(1);
     }
 }
 
@@ -488,6 +491,7 @@ input {
         background-clip: text;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
+        transition: transform .3s ease-in-out;
         transform:scale(0);
     }
 }
@@ -500,7 +504,7 @@ input {
     }
      .hm__full{
         opacity: 1;
-        transition: .3s ease-in-out;
+        transition: transform .3s ease-in-out;
         transform:scale(1);
     }
 }
