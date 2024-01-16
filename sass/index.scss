@@ -481,12 +481,13 @@ input {
         position:absolute;
         cursor: pointer;
         opacity: 1;
+        color:$color-two;
+        transition: transform .3s ease-in-out;
     }
  
     .hm__full {
         position:absolute;
         cursor: pointer;
-        opacity:0;
         background:linear-gradient(#9356DC,#FF79DA );
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -500,17 +501,16 @@ input {
 
     .hm__empty {
         opacity: 0;
-        transition: .3s ease-in-out;
+        color:$color-one;
+        transform: scale(0);
     }
-     .hm__full{
+
+    .hm__full{
         opacity: 1;
-        transition: transform .3s ease-in-out;
         transform:scale(1);
     }
 }
  
-
-
 
 /*** SECTION ENTREES PLATS DESSERTS + ANIMATIONS ***/
 .categories {

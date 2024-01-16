@@ -396,11 +396,12 @@ input {
   position: absolute;
   cursor: pointer;
   opacity: 1;
+  color: black;
+  transition: transform 0.3s ease-in-out;
 }
 .hm .hm__full {
   position: absolute;
   cursor: pointer;
-  opacity: 0;
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -411,11 +412,11 @@ input {
 
 .hm:hover .hm__empty {
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  color: white;
+  transform: scale(0);
 }
 .hm:hover .hm__full {
   opacity: 1;
-  transition: transform 0.3s ease-in-out;
   transform: scale(1);
 }
 
